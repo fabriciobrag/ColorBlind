@@ -43,4 +43,18 @@ public abstract class ManagerTest {
 		return img;
 	}
 	
+	
+	public static int getResultPercent () {
+		int percent = 0;
+		
+		for (int i = 0; i <= images.size(); i++) {
+			Image img = images.get(i);
+			
+			if (img.getvalue() == answers.get(i)) {
+				Log.i(ManagerTest.APP_NAME, "CORRETO");
+			}
+		}
+		
+		return percent;
+	}
 }
