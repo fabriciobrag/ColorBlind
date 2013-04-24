@@ -1,5 +1,6 @@
-package tcc.tcc1;
+package tcc;
 
+import tcc.tcc1.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,10 +9,10 @@ import android.widget.ImageButton;
 
 /**
  * Tela incial do aplicativo.
- * @authors Fabrício e Manoel
+ * @authors Fabrï¿½cio e Manoel
  *
  */
-public class BoasVindasActivity extends Activity{
+public class HelloActivity extends Activity{
 	
 	private ImageButton startImageButton, helpImagepButton;
 
@@ -24,7 +25,7 @@ public class BoasVindasActivity extends Activity{
 	}
 	
 	/**
-	 * Realiza a inicialização das variáveis
+	 * Realiza a inicializaï¿½ï¿½o das variï¿½veis
 	 */
 	private void carregaVariaveis (){
 		helpImagepButton = (ImageButton)findViewById(R.id.help_imageButtonBoasVindas);
@@ -52,7 +53,7 @@ public class BoasVindasActivity extends Activity{
 	 * Inicia a activity principal
 	 */
 	private void mainActivity(){
-		Intent i = new Intent(this, MainActivity.class);
+		Intent i = new Intent(this, TestActivity.class);
         startActivity(i);
 	}
 	
@@ -60,7 +61,7 @@ public class BoasVindasActivity extends Activity{
 	 * Inicia a activity de ajuda
 	 */
 	private void helpActivity(){
-		Intent i = new Intent(this, AjudaActivity.class);
+		Intent i = new Intent(this, HelpActivity.class);
         startActivity(i);
 	}
 }

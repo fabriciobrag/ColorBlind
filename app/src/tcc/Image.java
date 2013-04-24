@@ -1,6 +1,6 @@
-package tcc.tcc1;
+package tcc;
 
-public class Imagem {
+public class Image {
 
 	
 	private int valor, id, grupoId, indiceGrupo, resourceId;
@@ -8,7 +8,7 @@ public class Imagem {
 	
 
 
-	public Imagem(int valor, int id, int grupoId, int indiceGrupo,
+	public Image(int valor, int id, int grupoId, int indiceGrupo,
 			int resourceId, String simbolo) {
 		super();
 		this.valor = valor;
@@ -19,7 +19,7 @@ public class Imagem {
 		this.simbolo = simbolo;
 	}
 	
-	public Imagem(int id) {
+	public Image(int id) {
 		super();
 		this.id = id;
 	}
@@ -86,7 +86,7 @@ public class Imagem {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Imagem other = (Imagem) obj;
+		Image other = (Image) obj;
 		if (id != other.id)
 			return false;
 		return true;

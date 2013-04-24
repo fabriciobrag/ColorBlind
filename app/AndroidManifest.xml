@@ -11,7 +11,7 @@
         android:label="@string/app_name" >
         <activity
             android:label="@string/app_name"
-            android:name=".BoasVindasActivity" >
+            android:name="tcc.HelloActivity" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,14 +21,14 @@
         
        <activity
             android:label="@string/app_name"
-            android:name=".MainActivity" >
+            android:name="tcc.TestActivity" >
             <intent-filter > 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
        </activity>
        <activity
             android:label="@string/app_name"
-            android:name=".ResultadoActivity">       
+            android:name="tcc.ResultActivity">       
            <intent-filter >
             	<category android:name="android.intent.category.LAUNCHER" />
            </intent-filter> 
@@ -36,7 +36,7 @@
        
            <activity
             android:label="@string/app_name"
-            android:name=".AjudaActivity">       
+            android:name="tcc.HelpActivity">       
            <intent-filter >
             	<category android:name="android.intent.category.LAUNCHER" />
            </intent-filter> 

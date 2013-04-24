@@ -1,5 +1,6 @@
-package tcc.tcc1;
+package tcc;
 
+import tcc.tcc1.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +9,10 @@ import android.widget.TextView;
 
 /**
  * Tela de ajuda do aplicativo
- * @authors Fabrício e Manoel
+ * @authors Fabrï¿½cio e Manoel
  *
  */
-public class AjudaActivity extends Activity {
+public class HelpActivity extends Activity {
 
 	private Button okButton;
 	private TextView textoAjudaTextView;

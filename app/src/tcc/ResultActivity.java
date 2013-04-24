@@ -1,5 +1,6 @@
-package tcc.tcc1;
+package tcc;
 
+import tcc.tcc1.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -8,7 +9,7 @@ import android.widget.TextView;
  * @author Fabricio e Manoel
  *
  */
-public class ResultadoActivity extends Activity{
+public class ResultActivity extends Activity{
 	
 	private TextView resultadoTextView, resultado_descricaoTextView;
 	
@@ -19,14 +20,14 @@ public class ResultadoActivity extends Activity{
 	    }
 	  
 	/**
-	 * Incicializa e carrega as vairiáveis do resultado
+	 * Incicializa e carrega as vairiï¿½veis do resultado
 	 */
 	public void carregaVariaveis (){
 		resultadoTextView = (TextView)findViewById(R.id.resultado_textView);
 		resultado_descricaoTextView = (TextView)findViewById(R.id.resultado_descricao_textView);
 		//Resultados possiveis dos testes, obtido por uma das funcoes de resultado 
 		//(media, soma, moda, etc)
-		switch (GerenciaTeste.getResultado()){
+		switch (ManagerTest.getResultado()){
 			case 0:
 				resultadoTextView.setText(R.string.resultado_0);
 				resultado_descricaoTextView.setText(R.string.resultado_0_descricao);
@@ -53,7 +54,7 @@ public class ResultadoActivity extends Activity{
 				break;
 			default:
 				resultadoTextView.setText("Erro");
-				resultado_descricaoTextView.setText("Erro - resultado: " + GerenciaTeste.getResultado());
+				resultado_descricaoTextView.setText("Erro - resultado: " + ManagerTest.getResultado());
 		}		
 	}
 }

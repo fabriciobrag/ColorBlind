@@ -1,13 +1,13 @@
-package tcc.tcc1;
+package tcc;
 
 import java.util.ArrayList;
 
-public abstract class GerenciaTeste {
+public abstract class ManagerTest {
 	private static int idImagemCorrente = 0;
 	private static int quantidadeTelasPorGrupo = 0;
 	private static int quantidadeGruposTeste = 0;
 	private static int quantidadeTentativasPorImagem = 0;
-	private static ArrayList<Imagem> imagens = new ArrayList<Imagem>();
+	private static ArrayList<Image> imagens = new ArrayList<Image>();
 	private static ArrayList<Integer> respostas = new ArrayList<Integer>();
 	
 	
@@ -22,7 +22,7 @@ public abstract class GerenciaTeste {
 	/**
 	 * Retorna o resultado geral do teste, de acordo com os resultado
 	 * parciais obtidos.
-	 * @return a média aritimética simples dos resultados parciais
+	 * @return a mï¿½dia aritimï¿½tica simples dos resultados parciais
 	 */
 	public static int getResultado (){
 		int soma = 0;
@@ -32,7 +32,7 @@ public abstract class GerenciaTeste {
 		return Math.round(soma/respostas.size());
 	}
 	
-	public static Imagem getImagemCorrente(){
+	public static Image getImagemCorrente(){
 		return imagens.get(idImagemCorrente);
 	}
 	
@@ -41,7 +41,7 @@ public abstract class GerenciaTeste {
 	}
 
 	public static void setIdImagemCorrente(int idImagemCorrente) {
-		GerenciaTeste.idImagemCorrente = idImagemCorrente;
+		ManagerTest.idImagemCorrente = idImagemCorrente;
 	}
 
 	public static int getquantidadeTelasPorGrupo() {
@@ -71,15 +71,15 @@ public abstract class GerenciaTeste {
 		quantidadeTentativasPorImagem = quantTentativasPorImagem;
 	}
 
-	public static ArrayList<Imagem> getImagens() {
+	public static ArrayList<Image> getImagens() {
 		return imagens;
 	}
 
-	public static void setImagens(ArrayList<Imagem> imagens) {
-		GerenciaTeste.imagens = imagens;
+	public static void setImagens(ArrayList<Image> imagens) {
+		ManagerTest.imagens = imagens;
 	}
 	
-	public static void setImagens(Imagem imagem) {
+	public static void setImagens(Image imagem) {
 		imagens.add(imagem);
 	}
 }

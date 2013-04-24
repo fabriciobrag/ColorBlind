@@ -1,6 +1,8 @@
-package tcc.tcc1;
+package tcc;
 
 import java.util.ArrayList;
+
+import tcc.tcc1.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,10 +14,10 @@ import android.widget.Toast;
 
 /**
  * Activity principal do aplicativo
- * @authors Fabrício e Manoel
+ * @authors Fabrï¿½cio e Manoel
  *
  */
-public class MainActivity extends Activity {
+public class TestActivity extends Activity {
     
 	private ImageButton responderButton, avancarButton, helpButton;
 	private ImageView visualizadorImagensTextView;
@@ -35,28 +37,28 @@ public class MainActivity extends Activity {
      * Carrega a imagem a ser visualizada
      */
     private void carregaImagem (){
-    	visualizadorImagensTextView.setImageResource(GerenciaTeste.getImagemCorrente().getResourceId());
+    	visualizadorImagensTextView.setImageResource(ManagerTest.getImagemCorrente().getResourceId());
     }
     
     /**
      * Visualiza a activity de resultado
      */
     private void resultadoActivity(){
-		Intent i = new Intent(this, ResultadoActivity.class);
+		Intent i = new Intent(this, ResultActivity.class);
         startActivity(i);
 	}
     
     /**
-     * Carrega o próximo teste parcial ou encerra o teste se estes
-     * já tiverem findado
+     * Carrega o prï¿½ximo teste parcial ou encerra o teste se estes
+     * jï¿½ tiverem findado
      */
     private void avancaTeste (){
-    	Toast.makeText(MainActivity.this,"Resposta Correta!", Toast.LENGTH_SHORT).show();
-    	Imagem imagemCorrente = GerenciaTeste.getImagemCorrente();
-    	GerenciaTeste.setResposta(imagemCorrente.getValor());
-    	if (!((imagemCorrente.getGrupoId()+1)==GerenciaTeste.getquantidadeGruposTeste())){
+    	Toast.makeText(TestActivity.this,"Resposta Correta!", Toast.LENGTH_SHORT).show();
+    	Image imagemCorrente = ManagerTest.getImagemCorrente();
+    	ManagerTest.setResposta(imagemCorrente.getValor());
+    	if (!((imagemCorrente.getGrupoId()+1)==ManagerTest.getquantidadeGruposTeste())){
     		//resultadoPorGrupo.add(imagemCorrente.getValor());
-    		GerenciaTeste.setIdImagemCorrente((GerenciaTeste.getImagemCorrente().getGrupoId()+1)*GerenciaTeste.getquantidadeTelasPorGrupo());
+    		ManagerTest.setIdImagemCorrente((ManagerTest.getImagemCorrente().getGrupoId()+1)*ManagerTest.getquantidadeTelasPorGrupo());
     		carregaImagem();
     		entradaUsuarioTextView.setText("");
     	}else{
@@ -68,28 +70,28 @@ public class MainActivity extends Activity {
      * Visualiza a activity de ajuda
      */
     private void ajudaActivity (){
-    	Intent i = new Intent (this, AjudaActivity.class);
+    	Intent i = new Intent (this, HelpActivity.class);
 		startActivity(i);
     }
     
     
     private void continuaNoMesmoTeste(){
-    	Toast.makeText(MainActivity.this,"Resposta Incorreta!", Toast.LENGTH_SHORT).show();
+    	Toast.makeText(TestActivity.this,"Resposta Incorreta!", Toast.LENGTH_SHORT).show();
     	entradaUsuarioTextView.setText("");
     }
     
     /**
-     * Carrega a próxima imagem, dentro de um grupo de teste.
-     * Nao permite avancar se não responder corretamente a ultima
+     * Carrega a prï¿½xima imagem, dentro de um grupo de teste.
+     * Nao permite avancar se nï¿½o responder corretamente a ultima
      * imagem do grupod de teste.
      */
     private void avancaImagem (){
-    	Imagem imagemCorrente = GerenciaTeste.getImagemCorrente();
-    	if (imagemCorrente.getIndiceGrupo() == (GerenciaTeste.getquantidadeTelasPorGrupo()-1) ){//se for a ultima tela do grupo
-    		Toast.makeText(MainActivity.this,"Necessário responder para avançar!", Toast.LENGTH_SHORT).show();
+    	Image imagemCorrente = ManagerTest.getImagemCorrente();
+    	if (imagemCorrente.getIndiceGrupo() == (ManagerTest.getquantidadeTelasPorGrupo()-1) ){//se for a ultima tela do grupo
+    		Toast.makeText(TestActivity.this,"Necessï¿½rio responder para avanï¿½ar!", Toast.LENGTH_SHORT).show();
     		carregaImagem();
     	}else{
-    		GerenciaTeste.setIdImagemCorrente(GerenciaTeste.getIdImagemCorrente()+1);
+    		ManagerTest.setIdImagemCorrente(ManagerTest.getIdImagemCorrente()+1);
     		carregaImagem();
     	}
     }
@@ -114,7 +116,7 @@ public class MainActivity extends Activity {
     	responderButton.setOnClickListener(new View.OnClickListener() {	
 			public void onClick(View v) {
 				String entrada = entradaUsuarioTextView.getText().toString().trim();
-				Imagem imagemCorrente = GerenciaTeste.getImagemCorrente();
+				Image imagemCorrente = ManagerTest.getImagemCorrente();
 				if (entrada.trim().length() !=0){
 					if (imagemCorrente.isIgualId(entrada.charAt(0)+"")){
 						avancaTeste();
@@ -122,7 +124,7 @@ public class MainActivity extends Activity {
 						continuaNoMesmoTeste();
 					}
 				}else{
-					Toast.makeText(MainActivity.this,"Digite o símbolo que voce ve!", Toast.LENGTH_SHORT).show();
+					Toast.makeText(TestActivity.this,"Digite o sï¿½mbolo que voce ve!", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
@@ -133,20 +135,20 @@ public class MainActivity extends Activity {
      * e as quantidades dos mesmos
      */
     private void configurarImagens(){
-    	ArrayList<Imagem> imagens = new ArrayList<Imagem>();    	
-    	imagens.add(new Imagem(0,   0, 0, 0, R.drawable.imagem_1,"1"));
-    	imagens.add(new Imagem(1, 1, 0, 1, R.drawable.imagem_2,"2"));
-    	imagens.add(new Imagem(0,   2, 1, 0, R.drawable.imagem_3,"3"));
-    	imagens.add(new Imagem(1, 3, 1, 1, R.drawable.imagem_4,"4"));
-    	imagens.add(new Imagem(0,   4, 2, 0, R.drawable.imagem_5,"5"));
-    	imagens.add(new Imagem(1, 5, 2, 1, R.drawable.imagem_6,"6"));
-    	GerenciaTeste.setImagens(imagens);
-    	GerenciaTeste.setquantidadeGruposTeste(3);
-    	GerenciaTeste.setquantidadeTelasPorGrupo(2);
+    	ArrayList<Image> imagens = new ArrayList<Image>();    	
+    	imagens.add(new Image(0,   0, 0, 0, R.drawable.imagem_1,"1"));
+    	imagens.add(new Image(1, 1, 0, 1, R.drawable.imagem_2,"2"));
+    	imagens.add(new Image(0,   2, 1, 0, R.drawable.imagem_3,"3"));
+    	imagens.add(new Image(1, 3, 1, 1, R.drawable.imagem_4,"4"));
+    	imagens.add(new Image(0,   4, 2, 0, R.drawable.imagem_5,"5"));
+    	imagens.add(new Image(1, 5, 2, 1, R.drawable.imagem_6,"6"));
+    	ManagerTest.setImagens(imagens);
+    	ManagerTest.setquantidadeGruposTeste(3);
+    	ManagerTest.setquantidadeTelasPorGrupo(2);
     }
     
     /**
-     * Inicializa e carrega as variáveis do aplicativo
+     * Inicializa e carrega as variï¿½veis do aplicativo
      */
     private void carregarVariaveis (){
     	avancarButton               = (ImageButton)findViewById(R.id.avancar_imageButton);
