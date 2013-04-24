@@ -1,4 +1,4 @@
-package tcc;
+package tcc.tcc1;
 
 import java.util.ArrayList;
 

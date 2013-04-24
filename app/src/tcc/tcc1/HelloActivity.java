@@ -1,4 +1,4 @@
-package tcc;
+package tcc.tcc1;
 
 import tcc.tcc1.R;
 import android.app.Activity;
