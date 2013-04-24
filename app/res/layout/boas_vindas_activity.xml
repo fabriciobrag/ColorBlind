@@ -10,37 +10,35 @@
         android:layout_height="38dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal" >
-        
+
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/boasVindas" />
-        
     </LinearLayout>
-
+
     <LinearLayout
         android:id="@+id/corpo_linearLayout"
         android:layout_width="fill_parent"
         android:layout_height="410dp"
-        android:gravity="center_horizontal"
         android:background="@android:color/white"
-        android:orientation="horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
 
         <ImageButton
             android:id="@+id/help_imageButtonBoasVindas"
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:background="@drawable/help_inicial"/>
-
+            android:background="@drawable/help_inicial" />
+
         <ImageButton
             android:id="@+id/start_ImageButton"
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_gravity="center_horizontal|center_vertical"
             android:background="@drawable/ic_start" />
-
     </LinearLayout>
 
     <LinearLayout

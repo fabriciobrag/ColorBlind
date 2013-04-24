@@ -3,79 +3,29 @@ package tcc.tcc1;
 public class Image {
 
 	
-	private int valor, id, grupoId, indiceGrupo, resourceId;
-	private String simbolo;
-	
+	private int id, resourceId;
+	private String  value;
 
-
-	public Image(int valor, int id, int grupoId, int indiceGrupo,
-			int resourceId, String simbolo) {
+	public Image(int id, int resourceId, String value) {
 		super();
-		this.valor = valor;
+		this.value = value;
 		this.id = id;
-		this.grupoId = grupoId;
-		this.indiceGrupo = indiceGrupo;
 		this.resourceId = resourceId;
-		this.simbolo = simbolo;
+		
 	}
-	
+
 	public Image(int id) {
 		super();
 		this.id = id;
 	}
 	
-	public int getValor() {
-		return valor;
+	public String getvalue() {
+		return value;
 	}
 
-	public void setValor(int valor) {
-		this.valor = valor;
-	}
-
-	
-	public String getSimbolo() {
-		return simbolo;
-	}
-
-	public void setSimbolo(String simbolo) {
-		this.simbolo = simbolo;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public int getGrupoId() {
-		return grupoId;
-	}
-
-	public void setGrupoId(int grupoId) {
-		this.grupoId = grupoId;
-	}
-
-	public int getIndiceGrupo() {
-		return indiceGrupo;
-	}
-
-	public void setIndiceGrupo(int indiceGrupo) {
-		this.indiceGrupo = indiceGrupo;
-	}
-	
+		
 	public int getResourceId() {
 		return resourceId;
-	}
-
-	public void setResourceId(int resourceId) {
-		this.resourceId = resourceId;
-		
-	}
-	
-	public boolean isIgualId(String simbolo){
-		return (this.simbolo.compareToIgnoreCase(simbolo) ==0);
 	}
 
 	@Override

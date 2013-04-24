@@ -11,7 +11,7 @@ import android.widget.ImageButton;
  * @authors Fabr�cio e Manoel
  *
  */
-public class BoasVindasActivity extends Activity{
+public class HelloActivity extends Activity{
 	
 	private ImageButton startImageButton, helpImagepButton;
 
