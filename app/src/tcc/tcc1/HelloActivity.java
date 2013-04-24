@@ -18,17 +18,15 @@ public class HelloActivity extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        setContentView(R.layout.boas_vindas_activity);
+        setContentView(R.layout.hello_activity);
         carregaVariaveis();
         listeners();
 	}
 	
-	/**
-	 * Realiza a inicializa��o das vari�veis
-	 */
+	
 	private void carregaVariaveis (){
-		helpImagepButton = (ImageButton)findViewById(R.id.help_imageButtonBoasVindas);
-		startImageButton = (ImageButton)findViewById(R.id.start_ImageButton);
+		helpImagepButton = (ImageButton)findViewById(R.id.help_hello);
+		startImageButton = (ImageButton)findViewById(R.id.start_hello);
 	}
 	
 	/**

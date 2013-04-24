@@ -39,22 +39,24 @@ public abstract class ManagerTest {
 	
 	public static Image next () {
 		Image img = images.get(current++);
-		Log.i(ManagerTest.APP_NAME, "NEXT - current: " + current);
+//		Log.i(ManagerTest.APP_NAME, "NEXT - current: " + current);
 		return img;
 	}
 	
 	
 	public static int getResultPercent () {
-		int percent = 0;
+		int correct = 0;
 		
-		for (int i = 0; i <= images.size(); i++) {
-			Image img = images.get(i);
+		for (int i = 0; i < images.size(); i++) {
 			
-			if (img.getvalue() == answers.get(i)) {
+			if (images.get(i).getvalue().equals(answers.get(i)) ) {
 				Log.i(ManagerTest.APP_NAME, "CORRETO");
+				correct += 1;
 			}
 		}
 		
-		return percent;
+		float percent = (correct * 100.0f) / images.size();		
+		
+		return (int)percent;
 	}
 }

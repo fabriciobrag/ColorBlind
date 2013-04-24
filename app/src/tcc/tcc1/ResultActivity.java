@@ -2,6 +2,7 @@ package tcc.tcc1;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 /**
  * Tela de resultados do aplicativo
@@ -24,6 +25,10 @@ public class ResultActivity extends Activity{
 	public void carregaVariaveis (){
 		resultadoTextView = (TextView)findViewById(R.id.resultado_textView);
 		resultado_descricaoTextView = (TextView)findViewById(R.id.resultado_descricao_textView);
+		
+		Log.i(ManagerTest.APP_NAME, "" + ManagerTest.getResultPercent());
+		int percent = ManagerTest.getResultPercent();
+		
 		//Resultados possiveis dos testes, obtido por uma das funcoes de resultado 
 		//(media, soma, moda, etc)
 		/*switch (ManagerTest.getResultado()){
