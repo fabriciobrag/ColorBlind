@@ -1,10 +1,14 @@
 package tcc.tcc1;
 
 import java.util.ArrayList;
+
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -36,13 +40,6 @@ public class TestActivity extends Activity {
         listeners();    
     }
     /**
-     * Carrega a imagem a ser visualizada
-     */
-    private void carregaImagem (){
-//    	imgImageView.setImageResource(ManagerTest.getImagemCorrente().getResourceId());
-    }
-    
-    /**
      * Visualiza a activity de resultado
      */
     private void resultActivity(){
@@ -50,24 +47,6 @@ public class TestActivity extends Activity {
         startActivity(i);
 	}
     
-    /**
-     * Carrega o pr�ximo teste parcial ou encerra o teste se estes
-     * j� tiverem findado
-     */
-    private void avancaTeste (){
-    	/*Toast.makeText(TestActivity.this,"Resposta Correta!", Toast.LENGTH_SHORT).show();
-    	Image imagemCorrente = ManagerTest.getImagemCorrente();
-    	ManagerTest.setResposta(imagemCorrente.getValor());
-    	if (!((imagemCorrente.getGrupoId()+1)==ManagerTest.getquantidadeGruposTeste())){
-    		//resultadoPorGrupo.add(imagemCorrente.getValor());
-    		ManagerTest.setIdImagemCorrente((ManagerTest.getImagemCorrente().getGrupoId()+1)*ManagerTest.getquantidadeTelasPorGrupo());
-    		carregaImagem();
-    		inputTextView.setText("");
-    	}else{
-    		resultadoActivity();
-    	}*/
-    	
-    }
     /**
      * Visualiza a activity de ajuda
      */
@@ -77,23 +56,6 @@ public class TestActivity extends Activity {
     }
     
     
-   
-    
-    /**
-     * Carrega a pr�xima imagem, dentro de um grupo de teste.
-     * Nao permite avancar se n�o responder corretamente a ultima
-     * imagem do grupod de teste.
-     */
-    private void avancaImagem (){
-    	/*Image imagemCorrente = ManagerTest.getImagemCorrente();
-    	if (imagemCorrente.getIndiceGrupo() == (ManagerTest.getquantidadeTelasPorGrupo()-1) ){//se for a ultima tela do grupo
-    		Toast.makeText(TestActivity.this,"Necess�rio responder para avan�ar!", Toast.LENGTH_SHORT).show();
-    		carregaImagem();
-    	}else{
-    		ManagerTest.setIdImagemCorrente(ManagerTest.getIdImagemCorrente()+1);
-    		carregaImagem();
-    	}*/
-    }
     
     /**
      * Contem os eventos listeners dos objetos
@@ -118,13 +80,23 @@ public class TestActivity extends Activity {
 				
 				ManagerTest.setAnswer(input);
 				if (ManagerTest.hasNext()) {
-					
+							
 					imgImageView.setImageResource(ManagerTest.next().getResourceId());
+//					inputTextView.setText("");
+
+//					answerButton.requestFocus();
+//					Log.i(ManagerTest.APP_NAME, ""+getWindow().getCurrentFocus());
+					
+										
+					//close keyboard
+					InputMethodManager imm = (InputMethodManager)getSystemService(
+						      Context.INPUT_METHOD_SERVICE);
+						imm.hideSoftInputFromWindow(inputTextView.getWindowToken(), 0);
+					
 				} else {
 					resultActivity();
 				}
-				
-				
+					
 			}
 		});
     }
@@ -142,14 +114,7 @@ public class TestActivity extends Activity {
     	images.add(new Image(i++, R.drawable.imagem_4,"4"));
     	
     	ManagerTest.startTest(images);
-
-    }
-    
-    /**
-     * Inicializa e carrega as vari�veis do aplicativo
-     */
-    private void loadVariables (){
-    	
     	
     }
+   
 }

@@ -18,10 +18,11 @@ public abstract class ManagerTest {
 		ManagerTest.answers = new ArrayList<String>();
 		ManagerTest.current = 0;
 		
+		next();		
 	}
 	
 	public static void setAnswer (String answer){
-		answers.add(current, answer);
+		answers.add(current - 1, answer);
 	}
 	
 	public static void setImages (ArrayList<Image> images) {
@@ -38,8 +39,13 @@ public abstract class ManagerTest {
 	}
 	
 	public static Image next () {
+//		if (current == -1) {
+//			current = 0;
+//		}
+//		setAnswer(answer);
 		Image img = images.get(current++);
-//		Log.i(ManagerTest.APP_NAME, "NEXT - current: " + current);
+		
+		Log.i(ManagerTest.APP_NAME, "NEXT - current: " + current);
 		return img;
 	}
 	
