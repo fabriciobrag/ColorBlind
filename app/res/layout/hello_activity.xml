@@ -4,49 +4,45 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <LinearLayout
-        android:id="@+id/cabecalho_linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/boasVindas" />
-    </LinearLayout>
-
     <RelativeLayout
         android:id="@+id/corpo_linearLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="410dp"
-        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:background="@color/black_overlay"
         android:gravity="center"
         android:orientation="vertical" >
 
         <ImageButton
             android:id="@+id/help_hello"
+            style="@style/ButtonBarButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_below="@+id/logo_hello"
             android:layout_marginTop="50dp"
             android:background="@drawable/help_inicial" />
+
+        <TextView
+            android:id="@+id/hello_desc"
+            android:layout_width="420dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo_hello"
+            android:layout_marginLeft="40dp"
+            android:text="@string/hello_desc" />
+
+        <ImageView
+            android:id="@+id/logo_hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="-100dp"
+            android:src="@drawable/logo200x128" />
 
         <ImageButton
             android:id="@+id/start_hello"
             style="@style/styleName"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_alignRight="@+id/logo_hello"
-            android:layout_alignTop="@+id/help_hello" />
-
-        <ImageView
-            android:id="@+id/logo_hello"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/logo200x128" />
+            android:layout_below="@+id/help_hello"
+            android:layout_centerHorizontal="true" />
         
     </RelativeLayout>
 

@@ -17,7 +17,7 @@ public class ResultActivity extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resultado_activity);
-		ResultReaderDbHelper mDbHelper = new ResultReaderDbHelper(getContext());
+//		ResultReaderDbHelper mDbHelper = new ResultReaderDbHelper();
 
         carregaVariaveis();    
     }
@@ -30,8 +30,6 @@ public class ResultActivity extends Activity{
 		
 		int percent = ManagerTest.getResultPercent();
 		
-		
-
 		
 		if (percent >= 0 && percent <= 29 ) { 
 			
