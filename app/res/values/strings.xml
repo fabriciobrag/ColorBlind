@@ -4,19 +4,15 @@
     <string name="app_name">ColorBlind - Uni-BH</string>
     <string name="boasVindas">SEJA BEM VINDO AO PROGRAMA</string>
     <string name="direitosReservados">Fabricio e Manoel © - Uni-BH</string>
-    <string name="resultado_0">RESULTADO 0</string>
-    <string name="resultado_1">RESULTADO 1</string>
-    <string name="resultado_2">RESULTADO 2</string>
-    <string name="resultado_3">RESULTADO 3</string>
-    <string name="resultado_4">RESULTADO 4</string>
-    <string name="resultado_5">RESULTADO 5</string>
-    <string name="resultado_6">RESULTADO 6</string>
-    <string name="resultado_0_descricao">Descricao do que seria o tal do resultado "0"</string>
-    <string name="resultado_1_descricao">Descricao do que seria o tal do resultado "1"</string>
-    <string name="resultado_2_descricao">Descricao do que seria o tal do resultado "2"</string>
-    <string name="resultado_3_descricao">Descricao do que seria o tal do resultado "3"</string>
-    <string name="resultado_4_descricao">Descricao do que seria o tal do resultado "4"</string>
-    <string name="resultado_5_descricao">Descricao do que seria o tal do resultado "5"</string>
-    <string name="resultado_6_descricao">Descricao do que seria o tal do resultado "6"</string>
-    <string name="texto_ajuda">Using DialogFragment to manage the dialog ensures that it correctly handles lifecycle events such as when the user presses the Back button or rotates the screen. The DialogFragment class also allows you to reuse the dialog s UI as an embeddable component in a larger UI, just like a traditional Fragment (such as when you want the dialog UI to appear differently on large and small screens).</string>    
+    <string name="result_0">RESULTADO %1$d </string>
+    <string name="result_1">RESULTADO 1</string>
+    <string name="result_2">RESULTADO 2</string>
+    <string name="result_0_desc">Descricao do que seria o tal do resultado &quot;0&quot;</string>
+    <string name="result_1_desc">Descricao do que seria o tal do resultado "1"</string>
+    <string name="result_2_desc">Descricao do que seria o tal do resultado "2"</string>
+    <string name="texto_ajuda">Using DialogFragment to manage the dialog ensures that it correctly handles lifecycle events such as when the user presses the Back button or rotates the screen. The DialogFragment class also allows you to reuse the dialog s UI as an embeddable component in a larger UI, just like a traditional Fragment (such as when you want the dialog UI to appear differently on large and small screens).</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
 </resources>

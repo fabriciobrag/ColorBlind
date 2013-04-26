@@ -31,7 +31,7 @@ public abstract class ManagerTest {
 	
 	public static Boolean hasNext () {
 		
-		if (current < images.size()){
+		if (current < images.size()) {
 			return true;
 		} else {
 			return false;
@@ -39,10 +39,7 @@ public abstract class ManagerTest {
 	}
 	
 	public static Image next () {
-//		if (current == -1) {
-//			current = 0;
-//		}
-//		setAnswer(answer);
+
 		Image img = images.get(current++);
 		
 		Log.i(ManagerTest.APP_NAME, "NEXT - current: " + current);

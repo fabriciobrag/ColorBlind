@@ -1,5 +1,6 @@
 package tcc.tcc1;
 
+import tcc.tcc1.ResultContract.ResultReaderDbHelper;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,54 +12,47 @@ import android.widget.TextView;
  */
 public class ResultActivity extends Activity{
 	
-	private TextView resultadoTextView, resultado_descricaoTextView;
+	private TextView resultTextView, result_descTextView;
 	
-	  public void onCreate(Bundle savedInstanceState) {
-	        super.onCreate(savedInstanceState);
-	        setContentView(R.layout.resultado_activity);
-	        carregaVariaveis();    
-	    }
+	public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.resultado_activity);
+		ResultReaderDbHelper mDbHelper = new ResultReaderDbHelper(getContext());
+
+        carregaVariaveis();    
+    }
 	  
-	/**
-	 * Incicializa e carrega as vairi�veis do resultado
-	 */
 	public void carregaVariaveis (){
-		resultadoTextView = (TextView)findViewById(R.id.resultado_textView);
-		resultado_descricaoTextView = (TextView)findViewById(R.id.resultado_descricao_textView);
+		resultTextView = (TextView)findViewById(R.id.resultado_textView);
+		result_descTextView = (TextView)findViewById(R.id.resultado_descricao_textView);
 		
-		Log.i(ManagerTest.APP_NAME, "" + ManagerTest.getResultPercent());
+		Log.i(ManagerTest.APP_NAME, " Resultado % " + ManagerTest.getResultPercent());
+		
 		int percent = ManagerTest.getResultPercent();
 		
-		//Resultados possiveis dos testes, obtido por uma das funcoes de resultado 
-		//(media, soma, moda, etc)
-		/*switch (ManagerTest.getResultado()){
-			case 0:
-				resultadoTextView.setText(R.string.resultado_0);
-				resultado_descricaoTextView.setText(R.string.resultado_0_descricao);
-				break;
-			case 1:
-				resultadoTextView.setText(R.string.resultado_1);
-				resultado_descricaoTextView.setText(R.string.resultado_1_descricao);
-				break;
-			case 2:
-				resultadoTextView.setText(R.string.resultado_2);
-				resultado_descricaoTextView.setText(R.string.resultado_2_descricao);
-				break;
-			case 3:
-				resultadoTextView.setText(R.string.resultado_3);
-				resultado_descricaoTextView.setText(R.string.resultado_3_descricao);
-				break;
-			case 4:
-				resultadoTextView.setText(R.string.resultado_4);
-				resultado_descricaoTextView.setText(R.string.resultado_4_descricao);
-				break;
-			case 5:
-				resultadoTextView.setText(R.string.resultado_5);
-				resultado_descricaoTextView.setText(R.string.resultado_5_descricao);
-				break;
-			default:
-				resultadoTextView.setText("Erro");
-				resultado_descricaoTextView.setText("Erro - resultado: " + ManagerTest.getResultado());
-		}		*/
+		
+
+		
+		if (percent >= 0 && percent <= 29 ) { 
+			
+			String strMeatFormat = getResources().getString(R.string.result_0);
+			String strMeatMsg = String.format(strMeatFormat, percent);
+			
+			resultTextView.setText(strMeatMsg);
+			result_descTextView.setText(R.string.result_0_desc);
+			
+			
+		} else if (percent > 30 && percent <= 69) {
+			resultTextView.setText(R.string.result_1);
+			result_descTextView.setText(R.string.result_1_desc);
+			
+			
+		} else if (percent > 70 && percent <= 100) {
+			
+			resultTextView.setText(R.string.result_2);
+			result_descTextView.setText(R.string.result_2_desc);
+			
+		} 
+
 	}
 }
