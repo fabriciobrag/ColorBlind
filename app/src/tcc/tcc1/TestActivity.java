@@ -108,10 +108,10 @@ public class TestActivity extends Activity {
     private void startTest(){
     	ArrayList<Image> images = new ArrayList<Image>(); 
     	int i = 0;
-    	images.add(new Image(i++, R.drawable.imagem_1,"1"));
-    	images.add(new Image(i++, R.drawable.imagem_2,"2"));
-    	images.add(new Image(i++, R.drawable.imagem_3,"3"));
-    	images.add(new Image(i++, R.drawable.imagem_4,"4"));
+    	images.add(new Image(i++, R.drawable.img_206,"1"));
+    	images.add(new Image(i++, R.drawable.img_206,"2"));
+    	images.add(new Image(i++, R.drawable.img_206,"3"));
+    	images.add(new Image(i++, R.drawable.img_206,"4"));
     	
     	ManagerTest.startTest(images);
     	

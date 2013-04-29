@@ -14,14 +14,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 	private static final int DATABASE_VERSION = 1;
 
-	private static final String DATABASE_NAME = "contactsManager";
+	private static final String DATABASE_NAME = "contactManager";
 
 	private static final String TABLE_CONTACTS = "contacts";
 
 	// Contacts Table Columns names
 	private static final String KEY_ID = "id";
-	private static final String KEY_SEX = "name";
-	private static final String KEY_RESULT = "name";
+	private static final String KEY_SEX = "sex";
+	private static final String KEY_RESULT = "result";
 	private static final String KEY_AGE = "phone_number";
 	private static final String KEY_DIAG = "diag";
 
@@ -88,7 +88,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	// Getting All Contacts
 	public List<Contact> getAllContacts() {
 		List<Contact> contactList = new ArrayList<Contact>();
-		String selectQuery = "SELECT " + KEY_SEX + ", " 
+		String selectQuery = "SELECT " + KEY_ID + ", "
+									   + KEY_SEX + ", " 
 									   + KEY_AGE + ", " 
 									   + KEY_RESULT + ", " 
 									   + KEY_DIAG 									   

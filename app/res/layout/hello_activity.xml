@@ -12,14 +12,6 @@
         android:gravity="center"
         android:orientation="vertical" >
 
-        <ImageButton
-            android:id="@+id/help_hello"
-            style="@style/ButtonBarButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/help_inicial" />
-
         <TextView
             android:id="@+id/hello_desc"
             android:layout_width="420dp"
@@ -37,13 +29,23 @@
             android:src="@drawable/logo200x128" />
 
         <ImageButton
+            android:id="@+id/help_hello"
+            style="@style/ButtonBarButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/hello_desc"
+            android:layout_below="@+id/hello_desc"
+            android:layout_marginTop="97dp"
+            android:background="@drawable/help_inicial" />
+
+        <ImageButton
             android:id="@+id/start_hello"
             style="@style/styleName"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_below="@+id/help_hello"
-            android:layout_centerHorizontal="true" />
-        
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/help_hello"
+            android:layout_marginRight="67dp" />
     </RelativeLayout>
 
     <LinearLayout
