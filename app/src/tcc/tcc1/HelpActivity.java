@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 /**
  * Tela de ajuda do aplicativo
- * @authors Fabr�cio e Manoel
+ * @authors Fabrício e Manoel
  *
  */
 public class HelpActivity extends Activity {

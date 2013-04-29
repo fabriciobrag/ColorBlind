@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 
 /**
  * Tela incial do aplicativo.
- * @authors Fabr�cio e Manoel
+ * @authors Fabrício e Manoel
  *
  */
 public class HelloActivity extends Activity{

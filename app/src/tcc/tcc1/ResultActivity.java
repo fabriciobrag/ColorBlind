@@ -1,6 +1,7 @@
 package tcc.tcc1;
 
-import tcc.tcc1.ResultContract.ResultReaderDbHelper;
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,21 +18,36 @@ public class ResultActivity extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resultado_activity);
-		ResultReaderDbHelper mDbHelper = new ResultReaderDbHelper(getContext());
 
-        carregaVariaveis();    
+        loadResult();    
     }
 	  
-	public void carregaVariaveis (){
+	public void loadResult (){
 		resultTextView = (TextView)findViewById(R.id.resultado_textView);
 		result_descTextView = (TextView)findViewById(R.id.resultado_descricao_textView);
 		
+		int percent = ManagerTest.getResultPercent();
+
+		
+	    DatabaseHandler db = new DatabaseHandler(this);
+         
+        
+        // Inserting Contacts
+        Log.d("Insert: ", "Inserting .."); 
+        db.addContact(new Contact("M", "12", percent, "Y"));        
+         
+        // Reading all contacts
+        Log.d("Reading: ", "Reading all contacts.."); 
+        List<Contact> contacts = db.getAllContacts();       
+         
+        for (Contact cn : contacts) {
+            String log = "Id: "+cn.get_id()+" , sex: " + cn.get_sex() + " , age: " + cn.get_age();
+            Log.d("Name: ", log);
+        }
+	
 		Log.i(ManagerTest.APP_NAME, " Resultado % " + ManagerTest.getResultPercent());
 		
-		int percent = ManagerTest.getResultPercent();
 		
-		
-
 		
 		if (percent >= 0 && percent <= 29 ) { 
 			
