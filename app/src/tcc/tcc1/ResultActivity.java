@@ -18,7 +18,6 @@ public class ResultActivity extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resultado_activity);
-
         loadResult();    
     }
 	  
@@ -46,7 +45,6 @@ public class ResultActivity extends Activity{
         }
 	
 		Log.i(ManagerTest.APP_NAME, " Resultado % " + ManagerTest.getResultPercent());
-		
 		
 		
 		if (percent >= 0 && percent <= 29 ) { 

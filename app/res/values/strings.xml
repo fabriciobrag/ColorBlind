@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">ColorBlind - Uni-BH</string>
-    <string name="boasVindas">SEJA BEM VINDO AO PROGRAMA</string>
+    <string name="hello_desc">Uma breve descrição de como será o funcionamento do aplicativo android. </string><string name="boasVindas">SEJA BEM VINDO AO PROGRAMA</string>
     <string name="direitosReservados">Fabricio e Manoel © - Uni-BH</string>
     <string name="result_0">RESULTADO %1$d </string>
     <string name="result_1">RESULTADO 1</string>
@@ -14,5 +14,6 @@
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    
 
 </resources>
