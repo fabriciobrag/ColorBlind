@@ -82,11 +82,11 @@ public class TestActivity extends Activity {
 				if (ManagerTest.hasNext()) {
 							
 					imgImageView.setImageResource(ManagerTest.next().getResourceId());
-//					inputTextView.setText("");
+					//clear text
+					inputTextView.setText("");
 
 //					answerButton.requestFocus();
-//					Log.i(ManagerTest.APP_NAME, ""+getWindow().getCurrentFocus());
-					
+//					Log.i(ManagerTest.APP_NAME, ""+getWindow().getCurrentFocus());					
 										
 					//close keyboard
 					InputMethodManager imm = (InputMethodManager)getSystemService(
@@ -108,13 +108,17 @@ public class TestActivity extends Activity {
     private void startTest(){
     	ArrayList<Image> images = new ArrayList<Image>(); 
     	int i = 0;
-    	images.add(new Image(i++, R.drawable.img_206,"1"));
-    	images.add(new Image(i++, R.drawable.img_206,"2"));
-    	images.add(new Image(i++, R.drawable.img_206,"3"));
-    	images.add(new Image(i++, R.drawable.img_206,"4"));
-    	
+    	images.add(new Image(i++, R.drawable.img_206_e, "e"));
+    	images.add(new Image(i++, R.drawable.img_279_a, "a"));
+    	images.add(new Image(i++, R.drawable.img_280_4, "4"));
+    	images.add(new Image(i++, R.drawable.img_281_a, "a"));
+    	images.add(new Image(i++, R.drawable.img_282_6, "6"));
+    	images.add(new Image(i++, R.drawable.img_283_e, "e"));
+    	images.add(new Image(i++, R.drawable.img_284_h, "h"));
+    	images.add(new Image(i++, R.drawable.img_285_4, "4"));
+    	images.add(new Image(i++, R.drawable.img_286_6, "6"));
+
     	ManagerTest.startTest(images);
-    	
     }
    
 }

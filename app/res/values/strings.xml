@@ -4,16 +4,11 @@
     <string name="app_name">ColorBlind - Uni-BH</string>
     <string name="hello_desc">Uma breve descrição de como será o funcionamento do aplicativo android. </string><string name="boasVindas">SEJA BEM VINDO AO PROGRAMA</string>
     <string name="direitosReservados">Fabricio e Manoel © - Uni-BH</string>
-    <string name="result_0">RESULTADO %1$d </string>
-    <string name="result_1">RESULTADO 1</string>
-    <string name="result_2">RESULTADO 2</string>
-    <string name="result_0_desc">Descricao do que seria o tal do resultado &quot;0&quot;</string>
-    <string name="result_1_desc">Descricao do que seria o tal do resultado "1"</string>
-    <string name="result_2_desc">Descricao do que seria o tal do resultado "2"</string>
+    <string name="result_0">RESULTADO 0% acerto</string>
+    <string name="result_0_desc">Uma descrição detalhada sobre o resultado do teste. Faixa de resultado 0 - 29% de acerto. Um aviso para consultar um médico</string>
+    <string name="result_1_desc">Uma descrição detalhada sobre o resultado do teste. Faixa de resultado 30 - 69% de acerto. Um aviso para consultar um médico</string>
+    <string name="result_2_desc">Uma descrição detalhada sobre o resultado do teste. Faixa de resultado 70 - 100% de acerto. Um aviso para consultar um médico</string>
     <string name="texto_ajuda">Using DialogFragment to manage the dialog ensures that it correctly handles lifecycle events such as when the user presses the Back button or rotates the screen. The DialogFragment class also allows you to reuse the dialog s UI as an embeddable component in a larger UI, just like a traditional Fragment (such as when you want the dialog UI to appear differently on large and small screens).</string>
-    <string name="title_activity_fullscreen">FullscreenActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
     
 
 </resources>
