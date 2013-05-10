@@ -3,7 +3,6 @@ package tcc.tcc1;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -34,8 +33,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
 				+ KEY_ID + " INTEGER PRIMARY KEY," + KEY_SEX + " TEXT,"
-				+ KEY_AGE + " TEXT," + KEY_RESULT + " TEXT," 
-				+ KEY_DIAG + " TEXT" + ")";
+				+ KEY_AGE + " TEXT," + KEY_RESULT + " TEXT," + KEY_DIAG
+				+ " TEXT" + ")";
 		db.execSQL(CREATE_CONTACTS_TABLE);
 	}
 
@@ -58,14 +57,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		ContentValues values = new ContentValues();
-		values.put(KEY_SEX, contact.get_sex()); 
-		values.put(KEY_AGE, contact.get_age()); 
-		values.put(KEY_RESULT, contact.get_result()); 
+		values.put(KEY_SEX, contact.get_sex());
+		values.put(KEY_AGE, contact.get_age());
+		values.put(KEY_RESULT, contact.get_result());
 		values.put(KEY_DIAG, contact.get_diag());
 
 		// Inserting Row
 		db.insert(TABLE_CONTACTS, null, values);
-		db.close(); 
+		db.close();
 	}
 
 	// Getting single contact
@@ -79,21 +78,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 			cursor.moveToFirst();
 
 		Contact contact = new Contact(Integer.parseInt(cursor.getString(0)),
-				cursor.getString(1), cursor.getString(2), Integer.parseInt(cursor.getString(3)),
-				cursor.getString(4));
+				cursor.getString(1), cursor.getString(2),
+				Integer.parseInt(cursor.getString(3)), cursor.getString(4));
 		// return contact
 		return contact;
 	}
-	
+
 	// Getting All Contacts
 	public List<Contact> getAllContacts() {
 		List<Contact> contactList = new ArrayList<Contact>();
-		String selectQuery = "SELECT " + KEY_ID + ", "
-									   + KEY_SEX + ", " 
-									   + KEY_AGE + ", " 
-									   + KEY_RESULT + ", " 
-									   + KEY_DIAG 									   
-							+ " FROM " + TABLE_CONTACTS;
+		String selectQuery = "SELECT " + KEY_ID + ", " + KEY_SEX + ", "
+				+ KEY_AGE + ", " + KEY_RESULT + ", " + KEY_DIAG + " FROM "
+				+ TABLE_CONTACTS;
 
 		SQLiteDatabase db = this.getWritableDatabase();
 		Cursor cursor = db.rawQuery(selectQuery, null);
@@ -106,7 +102,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				contact.set_age(cursor.getString(2));
 				contact.set_result(Integer.parseInt(cursor.getString(3)));
 				contact.set_diag(cursor.getString(4));
-				
+
 				// Adding contact to list
 				contactList.add(contact);
 			} while (cursor.moveToNext());
@@ -124,7 +120,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		values.put(KEY_AGE, contact.get_age());
 		values.put(KEY_RESULT, contact.get_result());
 		values.put(KEY_DIAG, contact.get_diag());
-		
+
 		// updating row
 		return db.update(TABLE_CONTACTS, values, KEY_ID + " = ?",
 				new String[] { String.valueOf(contact.get_id()) });
@@ -137,7 +133,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				new String[] { String.valueOf(contact.get_id()) });
 		db.close();
 	}
-
 
 	// Getting contacts Count
 	public int getContactsCount() {

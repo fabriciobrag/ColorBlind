@@ -2,28 +2,26 @@ package tcc.tcc1;
 
 public class Image {
 
-	
 	private int id, resourceId;
-	private String  value;
+	private String value;
 
 	public Image(int id, int resourceId, String value) {
 		super();
 		this.value = value;
 		this.id = id;
 		this.resourceId = resourceId;
-		
+
 	}
 
 	public Image(int id) {
 		super();
 		this.id = id;
 	}
-	
+
 	public String getvalue() {
 		return value;
 	}
 
-		
 	public int getResourceId() {
 		return resourceId;
 	}
@@ -40,5 +38,5 @@ public class Image {
 		if (id != other.id)
 			return false;
 		return true;
-	}	
+	}
 }

@@ -1,21 +1,17 @@
 package tcc.tcc1;
 
 public class Contact {
-     
-    
-    int _id;
-    String _sex;
-    String _age;
-    int _result;
-    String _diag;
-    
-     
-    
-    public Contact(){
-         
-    }
 
-    
+	int _id;
+	String _sex;
+	String _age;
+	int _result;
+	String _diag;
+
+	public Contact() {
+
+	}
+
 	public Contact(int _id, String _sex, String _age, int _result, String _diag) {
 		super();
 		this._id = _id;
@@ -24,7 +20,6 @@ public class Contact {
 		this._result = _result;
 		this._diag = _diag;
 	}
-	
 
 	/**
 	 * @param _sex
@@ -40,7 +35,6 @@ public class Contact {
 		this._diag = _diag;
 	}
 
-
 	/**
 	 * @return the _id
 	 */
@@ -48,16 +42,13 @@ public class Contact {
 		return _id;
 	}
 
-
-
 	/**
-	 * @param _id the _id to set
+	 * @param _id
+	 *            the _id to set
 	 */
 	public void set_id(int _id) {
 		this._id = _id;
 	}
-
-
 
 	/**
 	 * @return the _sex
@@ -66,16 +57,13 @@ public class Contact {
 		return _sex;
 	}
 
-
-
 	/**
-	 * @param _sex the _sex to set
+	 * @param _sex
+	 *            the _sex to set
 	 */
 	public void set_sex(String _sex) {
 		this._sex = _sex;
 	}
-
-
 
 	/**
 	 * @return the _age
@@ -84,16 +72,13 @@ public class Contact {
 		return _age;
 	}
 
-
-
 	/**
-	 * @param _age the _age to set
+	 * @param _age
+	 *            the _age to set
 	 */
 	public void set_age(String _age) {
 		this._age = _age;
 	}
-
-
 
 	/**
 	 * @return the _result
@@ -102,15 +87,13 @@ public class Contact {
 		return _result;
 	}
 
-
-
 	/**
-	 * @param _result the _result to set
+	 * @param _result
+	 *            the _result to set
 	 */
 	public void set_result(int _result) {
 		this._result = _result;
 	}
-
 
 	/**
 	 * @return the _diag
@@ -119,16 +102,12 @@ public class Contact {
 		return _diag;
 	}
 
-
 	/**
-	 * @param _diag the _diag to set
+	 * @param _diag
+	 *            the _diag to set
 	 */
 	public void set_diag(String _diag) {
 		this._diag = _diag;
 	}
 
-
-
-	
-    
 }
