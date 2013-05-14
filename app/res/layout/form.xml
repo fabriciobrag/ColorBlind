@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+	android:id="@+id/widget0"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+<RadioGroup
+	android:id="@+id/widget37"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:gravity="center"
+	android:layout_x="49dp"
+	android:layout_y="171dp">
+<RadioButton
+	android:id="@+id/Masculino"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Masculino"
+	android:checked="true" />
+<RadioButton
+	android:id="@+id/Feminino"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Feminino" />
+</RadioGroup>
+<TextView
+	android:id="@+id/Sexo"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Sexo"
+	android:layout_x="52dp"
+	android:layout_y="152dp" />
+<EditText
+	android:id="@+id/s"
+	android:layout_width="86dp"
+	android:layout_height="wrap_content"
+	android:textSize="18sp"
+	android:phoneNumber="true"
+	android:layout_x="46dp"
+	android:layout_y="92dp" />
+<RadioGroup
+	android:id="@+id/widget44"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:layout_x="51dp"
+	android:layout_y="269dp">
+<RadioButton
+	android:id="@+id/N&#227;o"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="N&#227;o"
+	android:checked="true" />
+<RadioButton
+	android:id="@+id/sim"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_marginLeft="41dp"
+	android:text="sim" />
+</RadioGroup>
+<TextView
+	android:id="@+id/Idade"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Idade"
+	android:layout_x="52dp"
+	android:layout_y="72dp" />
+<TextView
+	android:id="@+id/widget40"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="J&#225; era daltonico diagnosticado?"
+	android:layout_x="50dp"
+	android:layout_y="250dp" />
+<Button
+	android:id="@+id/widget46"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Enviar"
+	android:layout_x="123dp"
+	android:layout_y="358dp" />
+<TextView
+	android:id="@+id/widget47"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Ajude-nos a melhorar nosso teste"
+	android:textSize="16sp"
+	android:textStyle="bold"
+	android:gravity="center"
+	android:layout_x="34dp"
+	android:layout_y="26dp" />
+</AbsoluteLayout>
