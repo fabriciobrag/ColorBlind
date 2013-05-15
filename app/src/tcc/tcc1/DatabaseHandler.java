@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
-	private static final int DATABASE_VERSION = 1;
+	private static final int DATABASE_VERSION = 2;
 
 	private static final String DATABASE_NAME = "contactManager";
 
@@ -21,7 +21,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private static final String KEY_ID = "id";
 	private static final String KEY_SEX = "sex";
 	private static final String KEY_RESULT = "result";
-	private static final String KEY_AGE = "phone_number";
+	private static final String KEY_AGE = "age";
 	private static final String KEY_DIAG = "diag";
 
 	public DatabaseHandler(Context context) {
@@ -143,6 +143,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 		// return count
 		return cursor.getCount();
+	}
+	
+	public void dropTable() {
+		SQLiteDatabase db = this.getReadableDatabase();
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_CONTACTS);
+
 	}
 
 }

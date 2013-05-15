@@ -17,7 +17,7 @@ import android.widget.TextView;
 /**
  * Activity principal do aplicativo
  * 
- * @authors Fabrï¿½cio e Manoel
+ * @authors Fabrício e Manoel
  * 
  */
 public class TestActivity extends Activity {
@@ -45,7 +45,10 @@ public class TestActivity extends Activity {
 	 * Visualiza a activity de resultado
 	 */
 	private void resultActivity() {
-		Intent i = new Intent(this, ResultActivity.class);
+		
+//		Intent i = new Intent(this, ResultActivity.class);
+		
+		Intent i = new Intent(this, GetInfoActivity.class);
 		startActivity(i);
 	}
 
@@ -124,14 +127,14 @@ public class TestActivity extends Activity {
 		ArrayList<Image> images = new ArrayList<Image>();
 		int i = 0;
 		images.add(new Image(i++, R.drawable.img_206_e, "e"));
-		images.add(new Image(i++, R.drawable.img_279_a, "a"));
-		images.add(new Image(i++, R.drawable.img_280_4, "4"));
-		images.add(new Image(i++, R.drawable.img_281_a, "a"));
-		images.add(new Image(i++, R.drawable.img_282_6, "6"));
-		images.add(new Image(i++, R.drawable.img_283_e, "e"));
-		images.add(new Image(i++, R.drawable.img_284_h, "h"));
-		images.add(new Image(i++, R.drawable.img_285_4, "4"));
-		images.add(new Image(i++, R.drawable.img_286_6, "6"));
+//		images.add(new Image(i++, R.drawable.img_279_a, "a"));
+//		images.add(new Image(i++, R.drawable.img_280_4, "4"));
+//		images.add(new Image(i++, R.drawable.img_281_a, "a"));
+//		images.add(new Image(i++, R.drawable.img_282_6, "6"));
+//		images.add(new Image(i++, R.drawable.img_283_e, "e"));
+//		images.add(new Image(i++, R.drawable.img_284_h, "h"));
+//		images.add(new Image(i++, R.drawable.img_285_4, "4"));
+//		images.add(new Image(i++, R.drawable.img_286_6, "6"));
 
 		ManagerTest.startTest(images);
 	}

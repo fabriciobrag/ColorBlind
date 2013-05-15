@@ -29,6 +29,7 @@
             android:text="@string/form_sex" /> 
 
         <RadioGroup
+            android:id="@+id/RadioGroupSex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" 
@@ -53,8 +54,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="@string/form_age"
-            android:inputType="textPersonName"
-            android:layout_marginTop="10dp" >
+            android:inputType="number"
+            android:layout_marginTop="10dp"
+             >
 
         </EditText>
         
@@ -70,6 +72,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal" 
             android:gravity="center"
+            android:id="@+id/RadioGroupDiag"
              >
 
             <RadioButton
