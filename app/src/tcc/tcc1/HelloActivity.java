@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -45,19 +46,40 @@ public class HelloActivity extends Activity {
 		Log.i(ManagerTest.APP_NAME, ""+ hasActiveInternetConnection());
 		
 		if (hasActiveInternetConnection()) {
-			
+
+		
 			httpclient = new DefaultHttpClient();
-            httppost = new HttpPost("http://10.0.2.2/project/insert.php");
+            httppost = new HttpPost("http://177.71.255.245/tcc/post_data.php");
 
             try
             {
-                nameValuePairs = new ArrayList<NameValuePair>();
-                nameValuePairs.add(new BasicNameValuePair("age", "8"));
-                nameValuePairs.add(new BasicNameValuePair("result", "10"));
-
-                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-                HttpResponse response = httpclient.execute(httppost);
-                response.getHeaders("teste");
+            	DatabaseHandler db = new DatabaseHandler(this);
+            	List<Contact> contacts = db.getAllContacts();
+        		
+        		 for (Contact cn : contacts) {
+	        		 String log = "diag: "+cn.get_diag()+" , sex: " + cn.get_sex() +
+	        		 " , age: " + cn.get_age();
+	        		 Log.d("Name: ", log);
+	        		 
+	        		 
+	        		
+	                nameValuePairs = new ArrayList<NameValuePair>();
+	                nameValuePairs.add(new BasicNameValuePair("age", cn.get_age()));
+	                nameValuePairs.add(new BasicNameValuePair("result",  Integer.toString(cn.get_result())));
+	                nameValuePairs.add(new BasicNameValuePair("sex", cn.get_sex()));
+	                nameValuePairs.add(new BasicNameValuePair("diag", cn.get_diag()));
+	                
+	                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+	                HttpResponse response = httpclient.execute(httppost);
+	                int status = response.getStatusLine().getStatusCode();
+	                
+	                Log.i(ManagerTest.APP_NAME, ""+status);
+	                
+	                db.deleteContact(cn);
+	                
+	                
+        		 }
+        		 db.close();
             }
             catch(Exception e)
             {
@@ -69,7 +91,7 @@ public class HelloActivity extends Activity {
 	private boolean hasActiveInternetConnection (){
 	    if (isNetworkAvailable()) {
 	        try {
-	            HttpURLConnection urlc = (HttpURLConnection) (new URL("http://www.google.com").openConnection());
+	            HttpURLConnection urlc = (HttpURLConnection) (new URL("http://177.71.255.245/tcc/post_data.php").openConnection());
 	            urlc.setRequestProperty("User-Agent", "Test");
 	            urlc.setRequestProperty("Connection", "close");
 	            urlc.setConnectTimeout(1500); 
