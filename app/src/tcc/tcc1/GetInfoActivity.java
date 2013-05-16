@@ -1,8 +1,7 @@
 package tcc.tcc1;
 
-import java.util.List;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -40,41 +39,35 @@ public class GetInfoActivity extends Activity {
 		//sex
 		radioGroupSex = (RadioGroup) findViewById(R.id.RadioGroupSex);
 		int selectedId = radioGroupSex.getCheckedRadioButtonId();
-        radioButtonSex = (RadioButton) findViewById(selectedId);
+		radioButtonSex = (RadioButton) findViewById(selectedId);
 		sex = radioButtonSex.getText().toString();
-        
+		
 		//diag
 		radioGroupDiag = (RadioGroup) findViewById(R.id.RadioGroupDiag);
 		selectedId = radioGroupDiag.getCheckedRadioButtonId();
 		radioButtonDiag = (RadioButton) findViewById(selectedId);
 		diag = radioButtonDiag.getText().toString();
-
+		
 		
 		Log.i(ManagerTest.APP_NAME, "Age: " + age);
 		Log.i(ManagerTest.APP_NAME, "Sex: " + sex);
 		Log.i(ManagerTest.APP_NAME, "Result: " + result);
 		Log.i(ManagerTest.APP_NAME, "Diagnosticado: " + diag);
+
+		
+		SyncContact sync = new SyncContact(this);
+		Contact cn = new Contact(sex, age, result, diag);
+
+	 	if (sync.hasActiveInternetConnection()) {
+	 		sync.makePost(cn);
+	 	} else {
+			DatabaseHandler db = new DatabaseHandler(this);
+			db.addContact(cn);	 		
+	 	}
 		
 		
-		 DatabaseHandler db = new DatabaseHandler(this);
-		 
-		
-		 db.addContact(new Contact(sex, age, result, diag));
-//		
-		 Log.d("Reading: ", "Reading all contacts..");
-		 List<Contact> contacts = db.getAllContacts();
-		
-		 for (Contact cn : contacts) {
-			 String log = "Id: "+cn.get_id()+" , sex: " + cn.get_sex() + " , age: " + cn.get_age();
-			 Log.d("Name: ", log);
-		 }
-		 //db.dropTable();
-		 
-		 
-		 
-		
-//		Intent i = new Intent(this, ResultActivity.class);
-//		startActivity(i);
+		Intent i = new Intent(this, ResultActivity.class);
+		startActivity(i);
 		
 	}
 	

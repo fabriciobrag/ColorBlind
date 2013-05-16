@@ -41,7 +41,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	// Upgrading database
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// Drop older table if existed
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_CONTACTS);
 
 		// Create tables again
@@ -62,7 +61,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		values.put(KEY_RESULT, contact.get_result());
 		values.put(KEY_DIAG, contact.get_diag());
 
-		// Inserting Row
 		db.insert(TABLE_CONTACTS, null, values);
 		db.close();
 	}
@@ -80,7 +78,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		Contact contact = new Contact(Integer.parseInt(cursor.getString(0)),
 				cursor.getString(1), cursor.getString(2),
 				Integer.parseInt(cursor.getString(3)), cursor.getString(4));
-		// return contact
+
 		return contact;
 	}
 
@@ -103,7 +101,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				contact.set_result(Integer.parseInt(cursor.getString(3)));
 				contact.set_diag(cursor.getString(4));
 
-				// Adding contact to list
 				contactList.add(contact);
 			} while (cursor.moveToNext());
 		}
@@ -141,7 +138,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		Cursor cursor = db.rawQuery(countQuery, null);
 		cursor.close();
 
-		// return count
 		return cursor.getCount();
 	}
 	
