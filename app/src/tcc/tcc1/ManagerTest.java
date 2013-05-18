@@ -38,6 +38,7 @@ public abstract class ManagerTest {
 		}
 	}
 
+	
 	public static Image next() {
 
 		Image img = images.get(current++);

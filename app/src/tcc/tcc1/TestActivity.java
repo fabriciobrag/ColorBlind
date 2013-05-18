@@ -2,7 +2,6 @@ package tcc.tcc1;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,10 +16,10 @@ import android.widget.TextView;
 /**
  * Activity principal do aplicativo
  * 
- * @authors Fabrício e Manoel
+ * @authors FabrÃ­cio e Manoel
  * 
  */
-public class TestActivity extends Activity {
+public class TestActivity extends MenuOptions {
 
 	private ImageButton answerButton, helpButton;
 	private ImageView imgImageView;
@@ -52,13 +51,7 @@ public class TestActivity extends Activity {
 		startActivity(i);
 	}
 
-	/**
-	 * Visualiza a activity de ajuda
-	 */
-	private void helpActivity() {
-		Intent i = new Intent(this, HelpActivity.class);
-		startActivity(i);
-	}
+	
 
 	/**
 	 * Contem os eventos listeners dos objetos

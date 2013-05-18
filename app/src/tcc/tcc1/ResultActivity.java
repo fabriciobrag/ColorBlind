@@ -1,10 +1,6 @@
 package tcc.tcc1;
 
-import java.util.List;
-
-import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 /**
@@ -13,10 +9,11 @@ import android.widget.TextView;
  * @author Fabricio e Manoel
  * 
  */
-public class ResultActivity extends Activity {
+public class ResultActivity extends MenuOptions {
 
 	private TextView resultTextView, result_descTextView;
 
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.result_activity);

@@ -1,6 +1,5 @@
 package tcc.tcc1;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,10 +11,10 @@ import android.widget.ImageButton;
  * @authors Fabrício e Manoel
  * 
  */
-public class HelloActivity extends Activity {
+public class HelloActivity extends MenuOptions  {
 
 	private ImageButton startImageButton, helpImagepButton;
-
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
@@ -25,10 +24,11 @@ public class HelloActivity extends Activity {
 		//bind listeners
 		listeners();
 		//syncronize Contatcs
-		syncContatcs();	
+		//syncContatcs();	
 		
 	}
 	
+	@SuppressWarnings("unused")
 	private void syncContatcs () {
 		SyncContact sync = new SyncContact(this);
 		sync.synchronize();
@@ -55,7 +55,7 @@ public class HelloActivity extends Activity {
 			}
 		});
 	}
-
+	
 	/**
 	 * Inicia a activity principal
 	 */
@@ -64,11 +64,4 @@ public class HelloActivity extends Activity {
 		startActivity(i);
 	}
 
-	/**
-	 * Inicia a activity de ajuda
-	 */
-	private void helpActivity() {
-		Intent i = new Intent(this, HelpActivity.class);
-		startActivity(i);
-	}
 }

@@ -1,6 +1,5 @@
 package tcc.tcc1;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +9,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-public class GetInfoActivity extends Activity {
+public class GetInfoActivity extends MenuOptions {
 
 	private String sex, age = "", diag = "";
 	private int result;
@@ -76,7 +75,7 @@ public class GetInfoActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.get_info, menu);
+		getMenuInflater().inflate(R.menu.menu_info, menu);
 		return true;
 	}
 

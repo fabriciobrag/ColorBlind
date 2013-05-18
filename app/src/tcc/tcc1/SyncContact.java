@@ -77,7 +77,7 @@ public class SyncContact {
 
 			}
 			
-			db.close();
+			
 		}
 	}
 
