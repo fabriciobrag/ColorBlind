@@ -1,6 +1,8 @@
 package tcc.tcc1;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -54,15 +56,8 @@ public class GetInfoActivity extends MenuOptions {
 		Log.i(ManagerTest.APP_NAME, "Diagnosticado: " + diag);
 
 		
-		SyncContact sync = new SyncContact(this);
 		Contact cn = new Contact(sex, age, result, diag);
-
-	 	if (sync.hasActiveInternetConnection()) {
-	 		sync.makePost(cn);
-	 	} else {
-			DatabaseHandler db = new DatabaseHandler(this);
-			db.addContact(cn);	 		
-	 	}
+		new PostAsyncContact(this).execute(cn);
 		
 		
 		Intent i = new Intent(this, ResultActivity.class);
@@ -79,4 +74,30 @@ public class GetInfoActivity extends MenuOptions {
 		return true;
 	}
 
+}
+
+
+class PostAsyncContact extends AsyncTask <Contact, Void, Void> {
+   
+	private Context mContext;
+	
+	public PostAsyncContact (Context cntx) {
+		this.mContext = cntx;
+	}
+   	
+   protected Void doInBackground(Contact... cn) {
+	   Log.i(ManagerTest.APP_NAME, "IN BACKGROUND" );
+	   
+	   SyncContact sync = new SyncContact(mContext);
+	   if (sync.hasActiveInternetConnection()) {
+	 		sync.makePost(cn[0]);
+	 	} else {
+			DatabaseHandler db = new DatabaseHandler(mContext);
+			db.addContact(cn[0]);	 		
+	 	}
+		
+	   return null;
+   }
+   
+   
 }
