@@ -35,7 +35,7 @@ public class MenuOptions extends Activity{
 	 * Inicia a activity de ajuda
 	 */
 	public void helpActivity() {
-		Intent i = new Intent(this, HelpActivity.class);
+		Intent i = new Intent(this, CameraActivity.class);
 		startActivity(i);
 	}
 
