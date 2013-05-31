@@ -1,36 +1,36 @@
 package tcc.tcc1;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 
-public class MenuOptions extends Activity{
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+
+public class MenuOptions extends SherlockActivity {
+	
 	
 	@Override
-	public boolean onCreateOptionsMenu (Menu menu){
-		MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.menu_info, menu);
-		return true;
-	}
+    public boolean onCreateOptionsMenu(Menu menu) {
+        
+    	menu.add("Sobre")
+        	.setIntent(new Intent(this, HelpActivity.class))
+            .setIcon(R.drawable.action_about)
+            .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+
+        menu.add("Camera")
+        	.setIntent(new Intent(this, CameraActivity.class))
+            .setIcon(R.drawable.ic_camera)
+            .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+
+        menu.add("Ajuda")
+        	.setIntent(new Intent(this, HelpActivity.class))
+	        .setIcon(R.drawable.action_help)
+	        .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        return true;
+    }
+    
 	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-	    // Handle item selection
-	    switch (item.getItemId()) {
-	        case R.id.menu_about:
-	        	helpActivity();
-	            return true;
-	        case R.id.menu_help:
-	        	helpActivity();
-	            return true;
-	        default:
-	            return super.onOptionsItemSelected(item);
-	    }
-	}
-
-
+	
 	/**
 	 * Inicia a activity de ajuda
 	 */

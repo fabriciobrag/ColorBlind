@@ -28,10 +28,11 @@ public class SyncContact {
 		mContext = ctx;
 	}
 
-	public  boolean hasActiveInternetConnection() {
+	public boolean hasActiveInternetConnection() {
 		if (isNetworkAvailable()) {
 			try {
-				HttpURLConnection urlc = (HttpURLConnection) (new URL("http://google.com").openConnection());
+				HttpURLConnection urlc = (HttpURLConnection) (new URL(
+						"http://google.com").openConnection());
 				urlc.setRequestProperty("User-Agent", "Test");
 				urlc.setRequestProperty("Connection", "close");
 				urlc.setConnectTimeout(1500);
@@ -60,51 +61,55 @@ public class SyncContact {
 		if (hasActiveInternetConnection()) {
 
 			DatabaseHandler db = new DatabaseHandler(mContext);
-			
+
 			int count = db.getContactsCount();
-			
-			if ( count > 0 ) {
+
+			if (count > 0) {
 				List<Contact> contacts = db.getAllContacts();
 
 				for (Contact cn : contacts) {
 					String log = "diag: " + cn.get_diag() + " , sex: "
 							+ cn.get_sex() + " , age: " + cn.get_age();
 					Log.d("Unsync Contact: ", log);
-					
+
 					makePost(cn);
-					db.deleteContact(cn);
+					
 				}
+				db.deleteAll();
 
 			}
-			
-			
+			db.close();
+
 		}
 	}
 
-	public  void makePost(Contact cn) {
+	public void makePost(Contact cn) {
 		if (hasActiveInternetConnection()) {
-		
+
 			try {
 				DefaultHttpClient httpclient = new DefaultHttpClient();
 				HttpPost httppost = new HttpPost(URL_POST);
-	
+
 				ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-				nameValuePairs.add(new BasicNameValuePair("age", cn.get_age()));
+				nameValuePairs.add(new BasicNameValuePair("age", Integer
+						.toString(cn.get_age())));
 				nameValuePairs.add(new BasicNameValuePair("result", Integer
 						.toString(cn.get_result())));
 				nameValuePairs.add(new BasicNameValuePair("sex", cn.get_sex()));
-				nameValuePairs.add(new BasicNameValuePair("diag", cn.get_diag()));
-	
+				nameValuePairs
+						.add(new BasicNameValuePair("diag", cn.get_diag()));
+				
+				nameValuePairs.add(new BasicNameValuePair("sug", cn.get_sug()));
+
 				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 				HttpResponse response = httpclient.execute(httppost);
 				int status = response.getStatusLine().getStatusCode();
-	
+
 				Log.i(ManagerTest.APP_NAME, "Request Status: " + status);
 			} catch (Exception e) {
 				e.printStackTrace();
-			}		
-		}	
+			}
+		}
 	}
-	
-	
+
 }

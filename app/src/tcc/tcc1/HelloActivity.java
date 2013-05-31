@@ -1,7 +1,12 @@
 package tcc.tcc1;
 
+import java.util.List;
+
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -11,11 +16,19 @@ import android.widget.ImageButton;
  * @authors Fabrício e Manoel
  * 
  */
-public class HelloActivity extends MenuOptions  {
+public class HelloActivity extends MenuOptions {
 
 	private ImageButton startImageButton, helpImagepButton;
+	
+   
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		//sherlock theme
+        setTheme(R.style.Theme_Sherlock); 
+        
+		Log.i(ManagerTest.APP_NAME, "CREATE : " );
+
+
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.hello_activity);
@@ -24,15 +37,11 @@ public class HelloActivity extends MenuOptions  {
 		//bind listeners
 		listeners();
 		//syncronize Contatcs
-		//syncContatcs();	
+		new AsyncContact(this).execute();		
+		
 		
 	}
 	
-	@SuppressWarnings("unused")
-	private void syncContatcs () {
-		SyncContact sync = new SyncContact(this);
-		sync.synchronize();
-	}
 
 	private void loadButtons() {
 		helpImagepButton = (ImageButton) findViewById(R.id.help_hello);
@@ -63,5 +72,45 @@ public class HelloActivity extends MenuOptions  {
 		Intent i = new Intent(this, TestActivity.class);
 		startActivity(i);
 	}
+	
+	/**
+	 * Inicia a activity de ajuda
+	 */
+	public void helpActivity() {
+		Intent i = new Intent(this, HelpActivity.class);
+		startActivity(i);
+	}
 
+	
+
+	/**
+	 * Inicia a activity de ajuda
+	 */
+	public void cameraActivity() {
+		Intent i = new Intent(this, CameraActivity.class);
+		startActivity(i);
+	}
+	
+	
+}
+
+class AsyncContact extends AsyncTask <Void, Void, Void> {
+	   
+	private Context mContext;
+	
+	public AsyncContact (Context cntx) {
+		this.mContext = cntx;
+	}
+   	
+   protected Void doInBackground(Void... cn) {
+	   Log.i(ManagerTest.APP_NAME, "IN BACKGROUND" );
+	   
+	   SyncContact sync = new SyncContact(mContext);
+	   sync.synchronize();
+	  
+		
+	   return null;
+   }
+   
+   
 }

@@ -28,6 +28,9 @@ public class TestActivity extends MenuOptions {
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		//sherlock theme
+        setTheme(R.style.Theme_Sherlock); 
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test_activity);
 

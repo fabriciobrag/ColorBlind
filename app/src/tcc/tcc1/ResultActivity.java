@@ -15,6 +15,9 @@ public class ResultActivity extends MenuOptions {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		//sherlock theme
+        setTheme(R.style.Theme_Sherlock); 
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.result_activity);
 		loadResult();

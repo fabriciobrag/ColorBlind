@@ -11,9 +11,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
-	private static final int DATABASE_VERSION = 2;
+	private static final int DATABASE_VERSION = 1;
 
-	private static final String DATABASE_NAME = "contactManager";
+	private static final String DATABASE_NAME = "cont";
 
 	private static final String TABLE_CONTACTS = "contacts";
 
@@ -23,6 +23,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private static final String KEY_RESULT = "result";
 	private static final String KEY_AGE = "age";
 	private static final String KEY_DIAG = "diag";
+	private static final String KEY_SUG = "sug";
+
 
 	public DatabaseHandler(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -34,7 +36,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
 				+ KEY_ID + " INTEGER PRIMARY KEY," + KEY_SEX + " TEXT,"
 				+ KEY_AGE + " TEXT," + KEY_RESULT + " TEXT," + KEY_DIAG
-				+ " TEXT" + ")";
+				+ " TEXT,"  + KEY_SUG + " TEXT"+ ")";
 		db.execSQL(CREATE_CONTACTS_TABLE);
 	}
 
@@ -60,6 +62,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		values.put(KEY_AGE, contact.get_age());
 		values.put(KEY_RESULT, contact.get_result());
 		values.put(KEY_DIAG, contact.get_diag());
+		values.put(KEY_SUG, contact.get_sug());
 
 		db.insert(TABLE_CONTACTS, null, values);
 		db.close();
@@ -70,14 +73,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getReadableDatabase();
 
 		Cursor cursor = db.query(TABLE_CONTACTS, new String[] { KEY_ID,
-				KEY_SEX, KEY_AGE, KEY_RESULT, KEY_DIAG }, KEY_ID + "=?",
+				KEY_SEX, KEY_AGE, KEY_RESULT, KEY_DIAG, KEY_SUG }, KEY_ID + "=?",
 				new String[] { String.valueOf(id) }, null, null, null, null);
 		if (cursor != null)
 			cursor.moveToFirst();
 
 		Contact contact = new Contact(Integer.parseInt(cursor.getString(0)),
-				cursor.getString(1), cursor.getString(2),
-				Integer.parseInt(cursor.getString(3)), cursor.getString(4));
+				cursor.getString(1), Integer.parseInt(cursor.getString(2)),
+				Integer.parseInt(cursor.getString(3)), cursor.getString(4), cursor.getString(5));
 
 		return contact;
 	}
@@ -86,7 +89,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	public List<Contact> getAllContacts() {
 		List<Contact> contactList = new ArrayList<Contact>();
 		String selectQuery = "SELECT " + KEY_ID + ", " + KEY_SEX + ", "
-				+ KEY_AGE + ", " + KEY_RESULT + ", " + KEY_DIAG + " FROM "
+				+ KEY_AGE + ", " + KEY_RESULT + ", " + KEY_DIAG + ", " + KEY_SUG + " FROM "
 				+ TABLE_CONTACTS;
 
 		SQLiteDatabase db = this.getWritableDatabase();
@@ -97,13 +100,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				Contact contact = new Contact();
 				contact.set_id(Integer.parseInt(cursor.getString(0)));
 				contact.set_sex(cursor.getString(1));
-				contact.set_age(cursor.getString(2));
+				contact.set_age(Integer.parseInt(cursor.getString(2)));
 				contact.set_result(Integer.parseInt(cursor.getString(3)));
 				contact.set_diag(cursor.getString(4));
-
+				contact.set_sug(cursor.getString(5));
+				
 				contactList.add(contact);
 			} while (cursor.moveToNext());
 		}
+		
 
 		return contactList;
 	}
@@ -136,15 +141,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		String countQuery = "SELECT  * FROM " + TABLE_CONTACTS;
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor cursor = db.rawQuery(countQuery, null);
-		cursor.close();
-
 		return cursor.getCount();
 	}
 	
 	public void dropTable() {
 		SQLiteDatabase db = this.getReadableDatabase();
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_CONTACTS);
-
+		db.close();
+	}
+	
+	// Deleting all contacts
+	public void deleteAll() {
+		SQLiteDatabase db = this.getWritableDatabase();
+		db.delete(TABLE_CONTACTS, null, null);
+		db.close();
 	}
 
 }

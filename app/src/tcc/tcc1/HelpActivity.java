@@ -18,6 +18,9 @@ public class HelpActivity extends MenuOptions {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		//sherlock theme
+        setTheme(R.style.Theme_Sherlock); 
+
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.ajuda_activity);

@@ -4,21 +4,23 @@ public class Contact {
 
 	int _id;
 	String _sex;
-	String _age;
+	int _age;
 	int _result;
 	String _diag;
+	String _sug;
 
 	public Contact() {
 
 	}
 
-	public Contact(int _id, String _sex, String _age, int _result, String _diag) {
+	public Contact(int _id, String _sex, int _age, int _result, String _diag, String _sug) {
 		super();
 		this._id = _id;
 		this._sex = _sex;
 		this._age = _age;
 		this._result = _result;
 		this._diag = _diag;
+		this._sug = _sug;
 	}
 
 	/**
@@ -27,12 +29,13 @@ public class Contact {
 	 * @param _result
 	 * @param _diag
 	 */
-	public Contact(String _sex, String _age, int _result, String _diag) {
+	public Contact(String _sex, int _age, int _result, String _diag, String _sug) {
 		super();
 		this._sex = _sex;
 		this._age = _age;
 		this._result = _result;
 		this._diag = _diag;
+		this._sug = _sug;
 	}
 
 	/**
@@ -68,15 +71,23 @@ public class Contact {
 	/**
 	 * @return the _age
 	 */
-	public String get_age() {
+	public int get_age() {
 		return _age;
+	}
+
+	public String get_sug() {
+		return _sug;
+	}
+
+	public void set_sug(String _sug) {
+		this._sug = _sug;
 	}
 
 	/**
 	 * @param _age
 	 *            the _age to set
 	 */
-	public void set_age(String _age) {
+	public void set_age(int _age) {
 		this._age = _age;
 	}
 
