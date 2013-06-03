@@ -1,6 +1,7 @@
 package tcc.tcc1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -77,19 +78,15 @@ public class GetInfoActivity extends SherlockActivity {
 		
 		Contact cn = new Contact(sex, age, result, diag, sug);
 		new PostAsyncContact(this).execute(cn);
-//		
-//		
-//		Intent i = new Intent(this, ResultActivity.class);
-//		startActivity(i);
+
+		Intent i = new Intent(this, ResultActivity.class);
+		startActivity(i);
 		
 	}
-	
-	
-
 
 }
 
-
+//post contact to server or save in sqlite
 class PostAsyncContact extends AsyncTask <Contact, Void, Void> {
    
 	private Context mContext;
@@ -111,7 +108,5 @@ class PostAsyncContact extends AsyncTask <Contact, Void, Void> {
 	 	}
 		
 	   return null;
-   }
-   
-   
+   }   
 }

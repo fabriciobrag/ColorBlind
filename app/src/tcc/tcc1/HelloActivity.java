@@ -1,14 +1,12 @@
 package tcc.tcc1;
 
-import java.util.List;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 
 /**
  * Tela incial do aplicativo.
@@ -18,7 +16,8 @@ import android.widget.ImageButton;
  */
 public class HelloActivity extends MenuOptions {
 
-	private ImageButton startImageButton, helpImagepButton;
+
+	private Button startButton;
 	
    
 	@Override
@@ -26,43 +25,29 @@ public class HelloActivity extends MenuOptions {
 		//sherlock theme
         setTheme(R.style.Theme_Sherlock); 
         
-		Log.i(ManagerTest.APP_NAME, "CREATE : " );
-
-
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.hello_activity);
-		//bind buttons
-		loadButtons();
+
+		startButton = (Button) findViewById(R.id.start_test);
 		//bind listeners
 		listeners();
 		//syncronize Contatcs
 		new AsyncContact(this).execute();		
-		
-		
+				
 	}
 	
-
-	private void loadButtons() {
-		helpImagepButton = (ImageButton) findViewById(R.id.help_hello);
-		startImageButton = (ImageButton) findViewById(R.id.start_hello);
-	}
 
 	/**
 	 * Conjunto de metodos listeners
 	 */
 	private void listeners() {
-		startImageButton.setOnClickListener(new View.OnClickListener() {
+		startButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				mainActivity();
 			}
 		});
 
-		helpImagepButton.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				helpActivity();
-			}
-		});
 	}
 	
 	/**
@@ -114,3 +99,4 @@ class AsyncContact extends AsyncTask <Void, Void, Void> {
    
    
 }
+

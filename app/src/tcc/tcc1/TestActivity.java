@@ -35,7 +35,7 @@ public class TestActivity extends MenuOptions {
 		setContentView(R.layout.test_activity);
 
 		this.answerButton = (ImageButton) findViewById(R.id.responder_imageButton);
-		this.helpButton = (ImageButton) findViewById(R.id.help_imageButton);
+//		this.helpButton = (ImageButton) findViewById(R.id.help_imageButton);
 		this.imgImageView = (ImageView) findViewById(R.id.imagem_imageView);
 		this.inputTextView = (TextView) findViewById(R.id.entrada_editText);
 
@@ -61,11 +61,11 @@ public class TestActivity extends MenuOptions {
 	 */
 	private void listeners() {
 
-		helpButton.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				helpActivity();
-			}
-		});
+//		helpButton.setOnClickListener(new View.OnClickListener() {
+//			public void onClick(View v) {
+//				helpActivity();
+//			}
+//		});
 
 		answerButton.setOnClickListener(new View.OnClickListener() {
 			@SuppressWarnings("deprecation")
