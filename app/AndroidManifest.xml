@@ -11,14 +11,12 @@
     
     <uses-sdk android:minSdkVersion="10" />
     
-   	
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_72x72"
         android:label="@string/app_name" >
         <activity
-            android:name="tcc.tcc1.HelloActivity"
+            android:name="com.tcc.activity.HelloActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,31 +25,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="tcc.tcc1.TestActivity"
+            android:name="com.tcc.activity.TestActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="tcc.tcc1.ResultActivity"
+            android:name="com.tcc.activity.ResultActivity"
             android:label="@string/app_name" >
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tcc.activity.HelpActivity"
+            android:label="@string/app_name"
+               android:windowSoftInputMode="stateHidden" >
+            
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
        
-        <activity
-            android:name="tcc.tcc1.HelpActivity"
-            android:label="@string/app_name"
-            android:windowSoftInputMode="stateHidden" >
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        
-        <activity
-            android:name=".CameraActivity"
+       <activity
+            android:name="com.tcc.activity.CameraActivity"
             android:label="@string/app_name" 
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar">
@@ -59,11 +57,16 @@
 	            <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
-            android:name="tcc.tcc1.GetInfoActivity"
+            android:name="com.tcc.activity.GetInfoActivity"
             android:label="@string/app_name"
-            android:windowSoftInputMode="stateHidden">
-        </activity>
+               android:windowSoftInputMode="stateHidden" >
+            
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>   
     </application>
 
 </manifest>

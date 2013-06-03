@@ -1,4 +1,4 @@
-package tcc.tcc1;
+package com.tcc.app;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;

@@ -1,5 +1,6 @@
-package tcc.tcc1;
+package com.tcc.activity;
 
+import tcc.tcc1.R;
 import android.content.Intent;
 
 import com.actionbarsherlock.app.SherlockActivity;

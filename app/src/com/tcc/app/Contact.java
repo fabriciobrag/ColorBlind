@@ -1,4 +1,4 @@
-package tcc.tcc1;
+package com.tcc.app;
 
 public class Contact {
 

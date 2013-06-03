@@ -1,4 +1,4 @@
-package tcc.tcc1;
+package com.tcc.app;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -103,7 +103,7 @@ public class DrawOnTop extends View {
     			
     			int y1192 = 1192 * y;
 //    			int r = (y1192 + 1634 * v);
-    			int r = 12;
+    			int r = 0;
     			int g = (y1192 - 833 * v - 400 * u);
     			int b = (y1192 + 2066 * u);
     			

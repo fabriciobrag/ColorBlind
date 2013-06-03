@@ -1,10 +1,13 @@
-package tcc.tcc1;
+package com.tcc.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.tcc.app.DrawOnTop;
+import com.tcc.app.Preview;
 
 public class CameraActivity extends Activity {
     private Preview mPreview;

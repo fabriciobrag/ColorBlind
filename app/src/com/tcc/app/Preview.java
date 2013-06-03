@@ -1,4 +1,4 @@
-package tcc.tcc1;
+package com.tcc.app;
 
 import java.io.IOException;
 
@@ -17,7 +17,7 @@ public class Preview extends SurfaceView implements SurfaceHolder.Callback {
     DrawOnTop mDrawOnTop;
     boolean mFinished;
 
-    Preview(Context context, DrawOnTop drawOnTop) {
+    public Preview(Context context, DrawOnTop drawOnTop) {
         super(context);
         
         mDrawOnTop = drawOnTop;

@@ -1,10 +1,10 @@
-package tcc.tcc1;
+package com.tcc.activity;
 
+import tcc.tcc1.R;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +12,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.actionbarsherlock.app.SherlockActivity;
+import com.tcc.app.Contact;
+import com.tcc.app.DatabaseHandler;
+import com.tcc.app.ManagerTest;
+import com.tcc.app.SyncContact;
 
 public class GetInfoActivity extends SherlockActivity {
 
@@ -68,12 +72,12 @@ public class GetInfoActivity extends SherlockActivity {
 		diag = radioButtonDiag.getText().toString();
 		
 		
-		Log.i(ManagerTest.APP_NAME, "Age: " + age);
-		Log.i(ManagerTest.APP_NAME, "Sex: " + sex);
-		Log.i(ManagerTest.APP_NAME, "Sug: " + sug);
-
-		Log.i(ManagerTest.APP_NAME, "Result: " + result);
-		Log.i(ManagerTest.APP_NAME, "Diagnosticado: " + diag);
+//		Log.i(ManagerTest.APP_NAME, "Age: " + age);
+//		Log.i(ManagerTest.APP_NAME, "Sex: " + sex);
+//		Log.i(ManagerTest.APP_NAME, "Sug: " + sug);
+//
+//		Log.i(ManagerTest.APP_NAME, "Result: " + result);
+//		Log.i(ManagerTest.APP_NAME, "Diagnosticado: " + diag);
 
 		
 		Contact cn = new Contact(sex, age, result, diag, sug);
@@ -96,7 +100,7 @@ class PostAsyncContact extends AsyncTask <Contact, Void, Void> {
 	}
    	
    protected Void doInBackground(Contact... cn) {
-	   Log.i(ManagerTest.APP_NAME, "IN BACKGROUND" );
+//	   Log.i(ManagerTest.APP_NAME, "IN BACKGROUND" );
 	   
 	   SyncContact sync = new SyncContact(mContext);
 	   

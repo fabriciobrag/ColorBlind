@@ -1,7 +1,8 @@
-package tcc.tcc1;
+package com.tcc.activity;
 
 import java.util.ArrayList;
 
+import tcc.tcc1.R;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,6 +14,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.tcc.app.Image;
+import com.tcc.app.ManagerTest;
+
 /**
  * Activity principal do aplicativo
  * 
@@ -21,7 +25,7 @@ import android.widget.TextView;
  */
 public class TestActivity extends MenuOptions {
 
-	private ImageButton answerButton, helpButton;
+	private ImageButton answerButton;
 	private ImageView imgImageView;
 	private TextView inputTextView;
 
@@ -35,7 +39,6 @@ public class TestActivity extends MenuOptions {
 		setContentView(R.layout.test_activity);
 
 		this.answerButton = (ImageButton) findViewById(R.id.responder_imageButton);
-//		this.helpButton = (ImageButton) findViewById(R.id.help_imageButton);
 		this.imgImageView = (ImageView) findViewById(R.id.imagem_imageView);
 		this.inputTextView = (TextView) findViewById(R.id.entrada_editText);
 
@@ -61,11 +64,6 @@ public class TestActivity extends MenuOptions {
 	 */
 	private void listeners() {
 
-//		helpButton.setOnClickListener(new View.OnClickListener() {
-//			public void onClick(View v) {
-//				helpActivity();
-//			}
-//		});
 
 		answerButton.setOnClickListener(new View.OnClickListener() {
 			@SuppressWarnings("deprecation")
@@ -123,14 +121,14 @@ public class TestActivity extends MenuOptions {
 		ArrayList<Image> images = new ArrayList<Image>();
 		int i = 0;
 		images.add(new Image(i++, R.drawable.img_206_e, "e"));
-//		images.add(new Image(i++, R.drawable.img_279_a, "a"));
-//		images.add(new Image(i++, R.drawable.img_280_4, "4"));
-//		images.add(new Image(i++, R.drawable.img_281_a, "a"));
-//		images.add(new Image(i++, R.drawable.img_282_6, "6"));
-//		images.add(new Image(i++, R.drawable.img_283_e, "e"));
-//		images.add(new Image(i++, R.drawable.img_284_h, "h"));
-//		images.add(new Image(i++, R.drawable.img_285_4, "4"));
-//		images.add(new Image(i++, R.drawable.img_286_6, "6"));
+		images.add(new Image(i++, R.drawable.img_279_a, "a"));
+		images.add(new Image(i++, R.drawable.img_280_4, "4"));
+		images.add(new Image(i++, R.drawable.img_281_a, "a"));
+		images.add(new Image(i++, R.drawable.img_282_6, "6"));
+		images.add(new Image(i++, R.drawable.img_283_e, "e"));
+		images.add(new Image(i++, R.drawable.img_284_h, "h"));
+		images.add(new Image(i++, R.drawable.img_285_4, "4"));
+		images.add(new Image(i++, R.drawable.img_286_6, "6"));
 
 		ManagerTest.startTest(images);
 	}
