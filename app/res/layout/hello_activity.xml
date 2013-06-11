@@ -16,11 +16,12 @@
 
     <TextView
         android:id="@+id/hello_desc"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:text="@string/hello_desc" />
+        android:text="@string/hello_desc"
+        android:textSize="17sp" />
 
     <Button
         android:id="@+id/start_test"

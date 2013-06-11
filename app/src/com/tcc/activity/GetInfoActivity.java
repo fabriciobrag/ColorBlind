@@ -1,6 +1,5 @@
 package com.tcc.activity;
 
-import tcc.tcc1.R;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;

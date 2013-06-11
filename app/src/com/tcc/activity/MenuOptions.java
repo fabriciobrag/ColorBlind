@@ -1,6 +1,5 @@
 package com.tcc.activity;
 
-import tcc.tcc1.R;
 import android.content.Intent;
 
 import com.actionbarsherlock.app.SherlockActivity;
@@ -14,7 +13,7 @@ public class MenuOptions extends SherlockActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         
     	menu.add("Sobre")
-        	.setIntent(new Intent(this, HelpActivity.class))
+        	.setIntent(new Intent(this, AboutActivity.class))
             .setIcon(R.drawable.action_about)
             .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
 
@@ -30,14 +29,4 @@ public class MenuOptions extends SherlockActivity {
         return true;
     }
     
-	
-	
-	/**
-	 * Inicia a activity de ajuda
-	 */
-	public void helpActivity() {
-		Intent i = new Intent(this, CameraActivity.class);
-		startActivity(i);
-	}
-
 }
