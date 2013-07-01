@@ -1,14 +1,13 @@
 package com.tcc.activity;
 
-import com.tcc.app.SyncContact;
-
-import tcc.tcc1.R;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.tcc.app.SyncContact;
 
 /**
  * Tela incial do aplicativo.
@@ -60,23 +59,6 @@ public class HelloActivity extends MenuOptions {
 		startActivity(i);
 	}
 	
-	/**
-	 * Inicia a activity de ajuda
-	 */
-	public void helpActivity() {
-		Intent i = new Intent(this, HelpActivity.class);
-		startActivity(i);
-	}
-
-	
-
-	/**
-	 * Inicia a activity de ajuda
-	 */
-	public void cameraActivity() {
-		Intent i = new Intent(this, CameraActivity.class);
-		startActivity(i);
-	}
 	
 	
 }

@@ -10,7 +10,7 @@ import android.widget.Button;
  * @authors Fabrício e Manoel
  * 
  */
-public class HelpActivity extends MenuOptions {
+public class AboutActivity extends MenuOptions {
 
 	private Button okButton;
 
@@ -22,8 +22,8 @@ public class HelpActivity extends MenuOptions {
 
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.help_activity);
-		okButton = (Button) findViewById(R.id.help_ok_button);		
+		setContentView(R.layout.activity_about);
+		okButton = (Button) findViewById(R.id.about_ok_button);		
 		okButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				finish(); // retorna para a activity mais acima na pilha

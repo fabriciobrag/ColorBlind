@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="tcc.tcc1"
+    package="com.tcc.activity"
     android:versionCode="1"
     android:versionName="1.0" >
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<uses-permission android:name="android.permission.INTERNET"/>
-	<uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
-	<uses-feature android:name="android.hardware.camera.autofocus" />
-    
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-sdk android:minSdkVersion="10" />
-    
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_72x72"
@@ -41,32 +43,32 @@
         <activity
             android:name="com.tcc.activity.HelpActivity"
             android:label="@string/app_name"
-               android:windowSoftInputMode="stateHidden" >
-            
+            android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-       
-       <activity
+        <activity
             android:name="com.tcc.activity.CameraActivity"
-            android:label="@string/app_name" 
+            android:label="@string/app_name"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.NoTitleBar">
+            android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
-	            <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name="com.tcc.activity.GetInfoActivity"
             android:label="@string/app_name"
-               android:windowSoftInputMode="stateHidden" >
-            
+            android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>   
+        </activity>
+        <activity
+            android:name="com.tcc.activity.AboutActivity"
+            android:label="@string/title_activity_about" >
+        </activity>
     </application>
 
 </manifest>

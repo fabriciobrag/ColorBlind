@@ -2,14 +2,27 @@
 <resources>
 
     <string name="app_name">ColorBlind</string>
-    <string name="hello_desc">Uma breve descrição de como será o funcionamento do aplicativo android. </string>
-    <string name="boasVindas">SEJA BEM VINDO AO PROGRAMA</string>
+    <string name="hello_desc">Avalie agora seu grau de daltonismo (deuteranopsia) neste teste rápido e fácil. Para ajuda, clique no ícone “?”, na barra superior.</string>
     <string name="direitosReservados">Fabricio e Manoel © - Uni-BH</string>
     <string name="result_0">RESULTADO 0% acerto</string>
-    <string name="result_0_desc">Uma descrição detalhada sobre o resultado do teste. Faixa de resultado 0 &#8211; 29% de acerto. Um aviso para consultar um médico</string>
-    <string name="result_1_desc">Uma descrição detalhada sobre o resultado do teste. Faixa de resultado 30 &#8211; 69% de acerto. Um aviso para consultar um médico</string>
-    <string name="result_2_desc">Uma descrição detalhada sobre o resultado do teste. Faixa de resultado 70 &#8211; 100% de acerto. Um aviso para consultar um médico</string>
-    <string name="texto_ajuda">Using DialogFragment to manage the dialog ensures that it correctly handles lifecycle events such as when the user presses the Back button or rotates the screen. The DialogFragment class also allows you to reuse the dialog s UI as an embeddable component in a larger UI, just like a traditional Fragment (such as when you want the dialog UI to appear differently on large and small screens).</string>
+    <string name="result_0_desc">O resultado do teste está normal. Você não demonstra distúrbio na visão de cores.</string>
+    <string name="result_1_desc">O resultado do teste está um pouco alterado. Você parece ter algum tipo de distúrbio na visão de cores (deuteranopsia).</string>
+    <string name="result_2_desc">O resultado do teste está alterado. Você parece ter algum tipo de distúrbio na visão de cores (deuteranopsia).</string>
+    <string name="txt_help">1. INICIANDO O TESTE \n\n
+Este é um teste simplificado, fácil e ágil para detecção e quantificação do daltonismo (deuteranopsia). Para iniciar o teste, clique o botão “Iniciar teste”, localizado no centro da tela. 
+
+\n \n 2. RESPONDENDO AS IMAGENS \n
+Iniciado o teste, 10 imagens serão mostradas. Para cada uma, observe e tente identificar o número/ letra representado, digitando o símbolo identificado na caixa de texto, abaixo da imagem. Confirme a resposta clicando sobre o botão com o símbolo “V”. Estando certa ou errada a resposta, uma nova imagem será carregada, dando continuidade ao teste. 
+Atenção: há apenas uma tentativa para cada imagem e não há diferenciação por maiúsculas e minúsculas!
+
+\n \n 3. PREENCHENDO O FORMULARIO \n
+Respondidas as 10 imagens, é apresentado um formulário solicitando informações (obrigatórias) e sugestões (opcional). A pergunta “Já era daltônico diagnosticado?” refere-se ao fato de você já saber, ou não, ser portador do daltonismo (discromatopsia congênita), antes de realizar este teste.
+Preenchidos os campos, clique o botão “Enviar”.
+
+\n \n 4. VISUALIZANDO O RESULTADO \n
+Depois de respondidas as imagens e preenchido o formulário, o resultado do teste é apresentado. A porcentagem de acerto dos símbolos apresentados nas imagens é mostrada, sendo acompanhada de uma mensagem diagnóstica, de acordo com o número de acertos alcançados. \n</string>
+    
+    
     <string name="form_masc">Masculino</string>
     <string name="form_fem">Feminino</string>
     <string name="form_yes">Sim</string>
@@ -20,9 +33,20 @@
     <string name="form_header">Ajude-nos a melhorar nosso teste</string>
     <string name="form_sex">Sexo:</string>
     <string name="form_send">enviar</string>
+    <string name="help">Ajuda</string>
+    <string name="about">Sobre</string>
+    <string name="start_test">Iniciar teste</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="repeat_test">repetir teste</string>
     
-	<string name="help">Ajuda</string>
-	<string name="about">Sobre</string>
-	
-	<string name="start_test">Iniciar teste</string>
+    
+    <string name="txt_about" formatted="false"><b>ColorBlind Test</b> \n\n
+A discromatopsia é um termo científico genérico para qualquer alteração na visão das cores. \n\n
+Na discromatopsia congênita, ou daltonismo, o tricromata anormal é o indivíduo que identifica as três cores básicas, sendo, no entanto uma delas de forma deficitária, podendo ser o vermelho (protanomalia), verde (deuteranomalia) ou azul (tritanomalia). \n\n
+O método de avaliação utilizado neste aplicativo foi desenvolvido em parceria com alunos de Medicina do Centro Universitário de Belo Horizonte – Uni-BH, e identifica a intensidade da alteração na visão das cores, para a deuteranomalia ou deuteranopsia, com base no percentual de acertos alcançado pelo avaliado no reconhecimento de símbolos apresentados em um grupo de 10 imagens. \n\n
+As imagens foram cuidadosamente elaboradas de forma a extrair, ao máximo, informação da capacidade de percepção de elementos na cor verde, e é com base nisso que o resultado é calculado.Índices de acertos a partir de 70% sugerem não haver alterações na capacidade de visão das cores para a cor verde (deuteranomalia ou deuteranopsia). De 40 a 60% dos acertos indicam pouca alteração e, se no máximo 30% das imagens forem identificadas, sugerese uma elevada alteração no resultado. Para cada uma das faixas de resultado, uma mensagem diagnóstica é apresentada. \n\n
+As informações pessoais solicitadas no formulário do teste são voltadas para análises estatísticas a respeito da discromatopsia e para evoluções no aplicativo, sendo garantido o sigilo de todos os dados informados. \n\n\n
+Fabrício e Manoel © 2013. \n\n</string>
 </resources>

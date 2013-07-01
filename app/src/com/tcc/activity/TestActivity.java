@@ -2,7 +2,6 @@ package com.tcc.activity;
 
 import java.util.ArrayList;
 
-import tcc.tcc1.R;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
