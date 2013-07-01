@@ -81,10 +81,7 @@ public class TestActivity extends MenuOptions {
 				        public void onClick(DialogInterface dialog, int which) { }
 				    });
 				    alert.show();
-				    
-//					Toast.makeText(TestActivity.this,
-//							"Digite o símbolo que voce ve!", Toast.LENGTH_SHORT)
-//							.show();
+				 
 					return;
 				}
 
@@ -121,6 +118,7 @@ public class TestActivity extends MenuOptions {
 		ArrayList<Image> images = new ArrayList<Image>();
 		int i = 0;
 		images.add(new Image(i++, R.drawable.img_206_e, "e"));
+		images.add(new Image(i++, R.drawable.img_277_3, "3"));
 		images.add(new Image(i++, R.drawable.img_279_a, "a"));
 		images.add(new Image(i++, R.drawable.img_280_4, "4"));
 		images.add(new Image(i++, R.drawable.img_281_a, "a"));

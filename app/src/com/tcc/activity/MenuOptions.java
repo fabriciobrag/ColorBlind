@@ -18,10 +18,10 @@ public class MenuOptions extends SherlockActivity {
             .setIcon(R.drawable.action_about)
             .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
 
-        menu.add("Camera")
-        	.setIntent(new Intent(this, CameraActivity.class))
-            .setIcon(R.drawable.ic_camera)
-            .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+//        menu.add("Camera")
+//        	.setIntent(new Intent(this, CameraActivity.class))
+//            .setIcon(R.drawable.ic_camera)
+//            .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
 
         menu.add("Ajuda")
         	.setIntent(new Intent(this, HelpActivity.class))
