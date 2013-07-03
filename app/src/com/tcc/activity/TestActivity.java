@@ -2,9 +2,7 @@ package com.tcc.activity;
 
 import java.util.ArrayList;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -65,23 +63,24 @@ public class TestActivity extends MenuOptions {
 
 
 		answerButton.setOnClickListener(new View.OnClickListener() {
-			@SuppressWarnings("deprecation")
 			public void onClick(View v) {
 				String input = inputTextView.getText().toString().trim();
 
 				if (input.isEmpty()) {
 					
 					// Show alert message and close the application
-				    AlertDialog alert = new AlertDialog.Builder(TestActivity.this)
-				            .create();
-				    //alert.setTitle("Error");
-				    alert.setMessage("Digite o símbolo que voce ve!");
-				    alert.setButton("OK", new DialogInterface.OnClickListener() {
-				        public void onClick(DialogInterface dialog, int which) { }
-				    });
-				    alert.show();
-				 
-					return;
+//				    AlertDialog alert = new AlertDialog.Builder(TestActivity.this)
+//				            .create();
+//				    //alert.setTitle("Error");
+//				    alert.setMessage("Digite o símbolo que voce ve!");
+//				    alert.setButton("OK", new DialogInterface.OnClickListener() {
+//				        public void onClick(DialogInterface dialog, int which) { }
+//				    });
+//				    alert.show();
+//					
+//					return;
+					
+					input = "0";
 				}
 
 				ManagerTest.setAnswer(input);
@@ -116,9 +115,9 @@ public class TestActivity extends MenuOptions {
 	private void startTest() {
 		ArrayList<Image> images = new ArrayList<Image>();
 		int i = 0;
-		images.add(new Image(i++, R.drawable.img_206_e, "e"));
 		images.add(new Image(i++, R.drawable.img_277_3, "3"));
 		images.add(new Image(i++, R.drawable.img_279_a, "a"));
+		images.add(new Image(i++, R.drawable.img_206_e, "e"));
 		images.add(new Image(i++, R.drawable.img_280_4, "4"));
 		images.add(new Image(i++, R.drawable.img_281_a, "a"));
 		images.add(new Image(i++, R.drawable.img_282_6, "6"));
