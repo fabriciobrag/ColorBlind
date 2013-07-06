@@ -64,7 +64,7 @@ public class TestActivity extends MenuOptions {
 
 		answerButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				String input = inputTextView.getText().toString().trim();
+				String input = inputTextView.getText().toString().trim().toLowerCase();
 
 				if (input.isEmpty()) {
 					
@@ -116,8 +116,8 @@ public class TestActivity extends MenuOptions {
 		ArrayList<Image> images = new ArrayList<Image>();
 		int i = 0;
 		images.add(new Image(i++, R.drawable.img_277_3, "3"));
-		images.add(new Image(i++, R.drawable.img_279_a, "a"));
 		images.add(new Image(i++, R.drawable.img_206_e, "e"));
+		images.add(new Image(i++, R.drawable.img_279_a, "a"));
 		images.add(new Image(i++, R.drawable.img_280_4, "4"));
 		images.add(new Image(i++, R.drawable.img_281_a, "a"));
 		images.add(new Image(i++, R.drawable.img_282_6, "6"));

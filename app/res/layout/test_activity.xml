@@ -18,7 +18,7 @@
             android:layout_gravity="center"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:src="@drawable/img_277_3" />
+            android:src="@drawable/img_206_e" />
 
     </LinearLayout>
 
